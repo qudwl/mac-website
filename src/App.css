@@ -1,0 +1,97 @@
+body {
+    background-color: #121212;
+    color: white;
+}
+
+.days {
+    width: calc(100% - 100px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 100px;
+    height: 20px;
+}
+
+.days span {
+    width: 220px;
+    text-align: center;
+}
+
+.times {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100% - 100px);
+}
+
+.times span {
+    width: 50px;
+    text-align: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+button {
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 0px 22px;
+    font-weight: bold;
+    margin: 20px;
+    transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0px;
+    width: 100%;
+}
+
+.searchBar {
+    display: flex;
+    padding: 10px 30px;
+    box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.15);
+    border-radius: 60px;
+    background-color: white;
+    transition: box-shadow 0.25s;
+}
+
+.searchBar button {
+    margin: 0px;
+}
+
+input {
+    border: none;
+    font-size: 16px;
+}
+
+*:focus {
+    outline: none;
+    box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.8);   
+}
+
+button:focus {
+    background-color: #aaa;
+}
+
+.searchBar > *:focus {
+    box-shadow: none;
+}
+
+.searchBar:focus-within {
+    box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.8);   
+}
+
+main {
+    height: calc(100vh - 120px);
+}
