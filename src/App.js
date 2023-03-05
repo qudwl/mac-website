@@ -1,6 +1,9 @@
 import "./App.css";
 import Logo from "./Logo";
-import { Search } from "react-bootstrap-icons";
+import { BoxArrowUp, Search } from "react-bootstrap-icons";
+import Row from "./Components/Row";
+import Calendar from "@toast-ui/react-calendar";
+import "@toast-ui/calendar/dist/toastui-calendar.min.css";
 
 function App() {
   const times = [];
@@ -15,24 +18,30 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div className="logo">
-          <Logo width="50" />
-        </div>
+        <Logo width="40" />
         <div className="searchBar">
           <input type="text" />
           <button>
-            <Search size={"16px"} />
+            <Search size={"1em"} />
             <span>Search</span>
           </button>
         </div>
         <div className="menu">
-          <button>Export</button>
+          <button>
+            <BoxArrowUp />
+            <span>Export</span>
+          </button>
           <button>CRN</button>
         </div>
       </header>
       <main>
-        <div className="days">{days}</div>
-        <div className="times">{times}</div>
+        {/* <div className="days">{days}</div>
+        <div className="times">{times}</div> */}
+        <Calendar
+          usageStatistics={false}
+          height={window.innerHeight - 80 + "px"}
+          isReadOnly={true}
+        />
       </main>
       <footer></footer>
     </div>

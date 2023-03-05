@@ -17,13 +17,31 @@ body {
     text-align: center;
 }
 
+.row {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+
+}
+
 .times {
     display: flex;
     flex-direction: column;
     width: 100px;
     align-items: center;
     justify-content: space-around;
-    height: calc(100% - 100px);
+    height: calc(100% - 20px);
+}
+
+.class-card {
+    width: 200px;
+    border-radius: 20px;
+    padding: 20px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
 }
 
 .times span {
@@ -36,34 +54,49 @@ body {
     height: 50px;
 }
 
+.menu {
+    display: flex;
+}
+
 button {
     height: 40px;
     border: none;
     border-radius: 20px;
-    background-color: black;
+    background-color: #333;
     color: white;
-    font-size: 16px;
     padding: 0px 22px;
     font-weight: bold;
-    margin: 20px;
+    margin: 10px 10px;
     transition: background-color 0.25s, box-shadow 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button > * {
+    padding: 0px 5px;
 }
 
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 20px 0px;
+    padding: 10px 0px;
     width: 100%;
+}
+
+header > * {
+    margin: 0px 20px;
 }
 
 .searchBar {
     display: flex;
-    padding: 10px 30px;
+    padding: 0px 0px 0px 30px;
     box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.15);
-    border-radius: 60px;
-    background-color: white;
+    border-radius: 30px;
+    background-color: #666666;
     transition: box-shadow 0.25s;
+    align-items: flex-start;
 }
 
 .searchBar button {
@@ -72,7 +105,9 @@ header {
 
 input {
     border: none;
-    font-size: 16px;
+    margin-top: 10px;
+    background-color: #666666;
+    width: 33vw;
 }
 
 *:focus {
@@ -81,7 +116,7 @@ input {
 }
 
 button:focus {
-    background-color: #aaa;
+    background-color: #999;
 }
 
 .searchBar > *:focus {
@@ -89,9 +124,16 @@ button:focus {
 }
 
 .searchBar:focus-within {
-    box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.8);   
+    box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.8);
 }
 
 main {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 80px);
+}
+
+.schedule {
+    width: calc(100% - 100px);
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
 }
