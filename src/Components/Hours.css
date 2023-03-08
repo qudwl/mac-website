@@ -1,0 +1,14 @@
+.hour-list {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.hour-list > span {
+    user-select: none;
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    height: 60px;
+}

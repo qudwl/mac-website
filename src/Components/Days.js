@@ -1,3 +1,5 @@
+import "./Days.css";
+
 const Days = () => {
   return (
     <div className="days">

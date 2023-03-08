@@ -1,0 +1,13 @@
+.days {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+}
+
+.days span {
+    width: 150px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}

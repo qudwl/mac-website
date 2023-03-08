@@ -4,46 +4,6 @@
     justify-content: center;
     align-items: center;
 }
-.days {
-    width: calc(100% - 100px);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 100px;
-    height: 20px;
-}
-
-.days span {
-    width: 220px;
-    text-align: center;
-}
-
-.row {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.times {
-    display: flex;
-    flex-direction: column;
-    width: 100px;
-    align-items: center;
-    justify-content: space-around;
-    height: calc(100% - 20px);
-}
-
-.class-card {
-    width: 200px;
-    border-radius: 20px;
-    padding: 20px 0px 0px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #ccc;
-}
 
 .times span {
     width: 50px;
@@ -85,11 +45,4 @@ button > * {
 
 button:focus {
     background-color: #999;
-}
-
-.schedule {
-    width: calc(100% - 100px);
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
 }
