@@ -1,0 +1,15 @@
+main {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+main > div.days {
+    width: 900px;
+}
+
+main > div.days > span {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+}

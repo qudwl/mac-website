@@ -1,6 +1,6 @@
 const Logo = (props) => {
   const width = props.width == undefined ? 100 : props.width;
-  const fill = props.fill == undefined ? "white" : props.fill;
+  const fill = props.dark ? "white" : "black";
   return (
     <svg
       width={width}

@@ -1,8 +1,9 @@
-body {
-    background-color: #121212;
-    color: white;
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
 .days {
     width: calc(100% - 100px);
     display: flex;
@@ -62,7 +63,7 @@ button {
     height: 40px;
     border: none;
     border-radius: 20px;
-    background-color: #333;
+    background-color: black;
     color: white;
     padding: 0px 22px;
     font-weight: bold;
@@ -77,39 +78,6 @@ button > * {
     padding: 0px 5px;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0px;
-    width: 100%;
-}
-
-header > * {
-    margin: 0px 20px;
-}
-
-.searchBar {
-    display: flex;
-    padding: 0px 0px 0px 30px;
-    box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.15);
-    border-radius: 30px;
-    background-color: #666666;
-    transition: box-shadow 0.25s;
-    align-items: flex-start;
-}
-
-.searchBar button {
-    margin: 0px;
-}
-
-input {
-    border: none;
-    margin-top: 10px;
-    background-color: #666666;
-    width: 33vw;
-}
-
 *:focus {
     outline: none;
     box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.8);   
@@ -117,18 +85,6 @@ input {
 
 button:focus {
     background-color: #999;
-}
-
-.searchBar > *:focus {
-    box-shadow: none;
-}
-
-.searchBar:focus-within {
-    box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.8);
-}
-
-main {
-    height: calc(100vh - 80px);
 }
 
 .schedule {
