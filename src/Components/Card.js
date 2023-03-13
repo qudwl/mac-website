@@ -28,17 +28,27 @@ const getLeft = (day) => {
 };
 
 const Card = (props) => {
-  const style = {
-    height: getHeight(props.start, props.end),
-    top: getTop(props.start),
-    left: getLeft(props.day),
-    backgroundColor: props.dark ? "rgba(255, 255, 255, 0.12)" : props.color,
-  };
-  console.log(style);
+  const arr = [];
+
+  for (let time of props.times) {
+    const style = {
+      height: getHeight(time.start, time.end),
+      top: getTop(time.start),
+      left: getLeft(time.day),
+      backgroundColor: props.dark ? "rgba(255, 255, 255, 0.12)" : props.color,
+    };
+    const el = (
+      <div className="class-card" style={style} tabIndex={0} key={props.key}>
+        <span>{props.title}</span>
+      </div>
+    );
+    arr.push(el);
+    console.log(el);
+  }
   return (
-    <div className="class-card" style={style} tabIndex={0} key={props.key}>
-      <span>{props.title}</span>
-    </div>
+    <>
+      {arr}
+    </>
   );
 };
 

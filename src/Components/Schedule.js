@@ -13,50 +13,17 @@ const colors = [
 const data = [
   {
     subject: "CSE",
-    cid: "201",
+    cid: "374",
     section: "A",
-    times: [
-      {
-        day: 0,
-        start: [12, 30],
-        end: [18, 30],
-      },
-    ],
-  },
-  {
-    subject: "CSE",
-    cid: "201",
-    section: "B",
-    times: [
-      {
-        day: 0,
-        start: [18, 30],
-        end: [19, 30],
-      },
-    ],
-  },
-  {
-    subject: "CSE",
-    cid: "201",
-    section: "C",
-    times: [
-      {
-        day: 4,
-        start: [12, 0],
-        end: [15, 30],
-      },
-    ],
-  },
-  {
-    subject: "CSE",
-    cid: "201",
-    section: "D",
-    times: [
-      {
-        day: 3,
-        start: [8, 30],
-        end: [9, 30],
-      },
+    times: [{
+      day: 2,
+      start: [13, 15],
+      end: [14, 35],
+    }, {
+      day: 4,
+      start: [13, 15],
+      end: [14, 35],
+    }
     ],
   },
 ];
@@ -65,16 +32,12 @@ const Schedule = (props) => {
   const arr = [];
   let key = 0;
   for (let cl of data) {
-    const start = cl.times[0].start;
-    const end = cl.times[0].end;
-    const day = cl.times[0].day;
     const title = cl.subject + cl.cid + cl.section;
+    console.log(cl);
     const card = (
       <Card
-        start={start}
-        end={end}
         color={colors[key]}
-        day={day}
+        times={cl.times}
         key={key++}
         title={title}
         dark={props.dark}
