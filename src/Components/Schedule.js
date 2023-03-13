@@ -18,8 +18,8 @@ const data = [
     times: [
       {
         day: 0,
-        start: [8, 30],
-        end: [9, 30],
+        start: [12, 30],
+        end: [18, 30],
       },
     ],
   },
@@ -29,9 +29,9 @@ const data = [
     section: "B",
     times: [
       {
-        day: 1,
-        start: [14, 30],
-        end: [16, 30],
+        day: 0,
+        start: [18, 30],
+        end: [19, 30],
       },
     ],
   },

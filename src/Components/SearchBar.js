@@ -11,7 +11,7 @@ const SearchBar = (props) => {
         <span>Search</span>
       </button>
       <div className="menu">
-        <button>
+        <button onClick={() => props.openModal(true)}>
           <BoxArrowUp />
           <span>Export</span>
         </button>
