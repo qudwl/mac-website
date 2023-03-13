@@ -41,9 +41,9 @@ const data = [
     section: "C",
     times: [
       {
-        day: 2,
-        start: [8, 30],
-        end: [9, 30],
+        day: 4,
+        start: [12, 0],
+        end: [15, 30],
       },
     ],
   },

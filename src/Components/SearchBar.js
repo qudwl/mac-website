@@ -7,10 +7,13 @@ const SearchBar = (props) => {
   return (
     <header>
       <Logo width="40" dark={props.dark} />
-      <button onClick={() => { props.openModal(true); props.setModalTitle("Search"); props.setModalContent(<SearchModal />) }}>
-        <Search size={"1em"} />
-        <span>Search</span>
-      </button>
+      <div className="searchBar">
+        <input />
+        <button onClick={() => { props.openModal(true); props.setModalTitle("Search"); props.setModalContent(<SearchModal />) }}>
+          <Search size={"1em"} />
+          <span>Search</span>
+        </button>
+      </div>
       <div className="menu">
         <button onClick={() => { props.openModal(true); props.setModalTitle("Export") }}>
           <BoxArrowUp />

@@ -1,21 +1,27 @@
 main {
-    top: 80px;
     width: 900px;
     height: 810px;
-    position: absolute;
-    left: 0px;
+    margin-top: 80px;
 }
 
-main > div.days {
+main>div.days {
     width: 900px;
 }
 
-main > div.days > span {
+main>div.days>span {
     display: inline-block;
     width: 150px;
     text-align: center;
 }
 
-main > div:last-of-type {
+main>div:last-of-type {
     display: flex;
+}
+
+@media screen and (max-width: 900px) {
+    main {
+        position: absolute;
+        left: 0px;
+        top: 80px;
+    }
 }
