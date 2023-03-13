@@ -27,7 +27,7 @@ button {
     color: white;
     padding: 0px 22px;
     font-weight: bold;
-    margin: 10px 10px;
+    margin: 10px;
     transition: background-color 0.25s, box-shadow 0.25s;
     display: flex;
     justify-content: center;

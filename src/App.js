@@ -10,16 +10,21 @@ function App() {
   const [propsTitle, setPropsTitle] = useState("Export");
   const [modalContent, setModalContent] = useState(<></>);
 
-  dark ? document.querySelector("#root").classList.add("dark") : document.querySelector("#root").classList.remove("dark")
+  dark
+    ? document.querySelector("#root").classList.add("dark")
+    : document.querySelector("#root").classList.remove("dark");
 
   return (
-    <>
-      <div className="App">
-        <SearchBar dark={dark} openModal={setShowModal} setModalTitle={setPropsTitle} setDark={setDark} setModalContent={setModalContent} />
-        <Main dark={dark} />
-      </div>
-      <Modal isOpen={showModal} title={propsTitle} close={setShowModal} modalContent={modalContent} />
-    </>
+    <div className="App">
+      <SearchBar
+        dark={dark}
+        openModal={setShowModal}
+        setModalTitle={setPropsTitle}
+        setDark={setDark}
+        setModalContent={setModalContent}
+      />
+      <Main dark={dark} />
+    </div>
   );
 }
 
