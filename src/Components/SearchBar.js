@@ -9,18 +9,35 @@ const SearchBar = (props) => {
       <Logo width="40" dark={props.dark} />
       <div className="searchBar">
         <input />
-        <button onClick={() => { props.openModal(true); props.setModalTitle("Search"); props.setModalContent(<SearchModal />) }}>
-          <Search size={"1em"} />
+        <span>
           <span>Search</span>
-        </button>
+        </span>
       </div>
       <div className="menu">
-        <button onClick={() => { props.openModal(true); props.setModalTitle("Export") }}>
+        <button
+          onClick={() => {
+            props.openModal(true);
+            props.setModalTitle("Export");
+          }}
+        >
           <BoxArrowUp />
           <span>Export</span>
         </button>
-        <button onClick={() => { props.openModal(true); props.setModalTitle("CRN") }}>CRN</button>
-        <button onClick={() => { props.setDark(!props.dark) }}>{props.dark ? <Moon /> : <Sun />}</button>
+        <button
+          onClick={() => {
+            props.openModal(true);
+            props.setModalTitle("CRN");
+          }}
+        >
+          CRN
+        </button>
+        <button
+          onClick={() => {
+            props.setDark(!props.dark);
+          }}
+        >
+          {props.dark ? <Moon /> : <Sun />}
+        </button>
       </div>
     </header>
   );

@@ -1,7 +1,7 @@
 main {
     width: 900px;
     height: 810px;
-    margin-top: 80px;
+    padding-bottom: 80px;
 }
 
 main>div.days {
@@ -22,6 +22,6 @@ main>div:last-of-type {
     main {
         position: absolute;
         left: 0px;
-        top: 80px;
+        top: 0px;
     }
 }

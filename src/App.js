@@ -16,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <Main dark={dark} />
       <SearchBar
         dark={dark}
         openModal={setShowModal}
@@ -23,7 +24,6 @@ function App() {
         setDark={setDark}
         setModalContent={setModalContent}
       />
-      <Main dark={dark} />
     </div>
   );
 }
