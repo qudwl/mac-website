@@ -32,7 +32,7 @@ const Card = (props) => {
     height: getHeight(props.start, props.end),
     top: getTop(props.start),
     left: getLeft(props.day),
-    backgroundColor: props.color,
+    backgroundColor: props.dark ? "rgba(255, 255, 255, 0.12)" : props.color,
   };
   console.log(style);
   return (

@@ -61,7 +61,7 @@ const data = [
   },
 ];
 
-const Schedule = () => {
+const Schedule = (props) => {
   const arr = [];
   let key = 0;
   for (let cl of data) {
@@ -69,7 +69,6 @@ const Schedule = () => {
     const end = cl.times[0].end;
     const day = cl.times[0].day;
     const title = cl.subject + cl.cid + cl.section;
-    console.log(start, end, day, key);
     const card = (
       <Card
         start={start}
@@ -78,6 +77,7 @@ const Schedule = () => {
         day={day}
         key={key++}
         title={title}
+        dark={props.dark}
       />
     );
     arr.push(card);

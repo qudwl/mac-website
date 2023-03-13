@@ -3,13 +3,13 @@ import Hours from "./Hours";
 import Schedule from "./Schedule";
 import "./Main.css";
 
-const Main = () => {
+const Main = (props) => {
   return (
     <main>
       <Days />
       <div>
         <Hours />
-        <Schedule />
+        <Schedule dark={props.dark} />
       </div>
     </main>
   );

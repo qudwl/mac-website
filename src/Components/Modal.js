@@ -13,7 +13,7 @@ const customStyle = {
 const Modal = (props) => {
   return (
     <ReactModal style={customStyle} isOpen={props.isOpen} closeTimeoutMS={401}>
-      <div onClick={() => props.close(false)} aria-label="Close modal">
+      <div style={{ "textAlign": "right" }} onClick={() => props.close(false)} aria-label="Close modal">
         <X
           size={"2em"}
           tabIndex="0"
@@ -26,6 +26,7 @@ const Modal = (props) => {
       </div>
 
       <h2>{props.title}</h2>
+      {props.modalContent}
     </ReactModal>
   );
 };

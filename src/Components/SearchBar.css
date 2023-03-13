@@ -20,6 +20,10 @@ header {
     background-color: white;
 }
 
+.dark header {
+    background-color: #121212;
+}
+
 header > * {
     margin: 0px 20px;
 }
