@@ -1,45 +1,17 @@
-import { BoxArrowUp, Search, Moon, Sun } from "react-bootstrap-icons";
-import Logo from "./Logo";
+import { useRef, useState } from "react";
 import "./SearchBar.css";
-import SearchModal from "./SearchModal";
 
 const SearchBar = (props) => {
+  const ref = useRef(null);
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <header>
-      <Logo width="40" dark={props.dark} />
-      <div className="searchBar">
-        <input />
-        <span>
-          <span>Search</span>
-        </span>
+    <div className="searchBar">
+      <span onClick={() => setExpanded(true)}>Search</span>
+      <div className={"searchBox " + (expanded ? "expanded" : "")}>
+        <input ref={ref} />
       </div>
-      <div className="menu">
-        <button
-          onClick={() => {
-            props.openModal(true);
-            props.setModalTitle("Export");
-          }}
-        >
-          <BoxArrowUp />
-          <span>Export</span>
-        </button>
-        <button
-          onClick={() => {
-            props.openModal(true);
-            props.setModalTitle("CRN");
-          }}
-        >
-          CRN
-        </button>
-        <button
-          onClick={() => {
-            props.setDark(!props.dark);
-          }}
-        >
-          {props.dark ? <Moon /> : <Sun />}
-        </button>
-      </div>
-    </header>
+    </div>
   );
 };
 

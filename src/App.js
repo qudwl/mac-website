@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import SearchBar from "./Components/SearchBar";
+import Header from "./Components/Header";
 import Main from "./Components/Main";
 import Modal from "./Components/Modal";
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Main dark={dark} />
-      <SearchBar
+      <Header
         dark={dark}
         openModal={setShowModal}
         setModalTitle={setPropsTitle}

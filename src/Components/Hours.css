@@ -5,7 +5,7 @@
     margin-top: 30px;
 }
 
-.hour-list > span {
+.hour-list>span {
     user-select: none;
     display: inline-block;
     width: 150px;

@@ -1,7 +1,6 @@
 main {
     width: 900px;
-    height: 810px;
-    padding-bottom: 80px;
+    height: 900px;
 }
 
 main>div.days {
@@ -23,5 +22,7 @@ main>div:last-of-type {
         position: absolute;
         left: 0px;
         top: 0px;
+        width: 100vw;
+        overflow: scroll;
     }
 }
