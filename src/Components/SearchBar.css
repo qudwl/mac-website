@@ -21,7 +21,7 @@
     font-weight: light;
 }
 
-.searchBar>input {
+.searchBar input {
     border-bottom: 1px solid black;
 }
 
@@ -74,7 +74,7 @@ header>* {
 }
 
 .searchBar input {
-    border: none;
+    border: 1px solid #bbb;
     margin-top: 10px;
     background-color: none;
     width: 80%;

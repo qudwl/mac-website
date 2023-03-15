@@ -2,13 +2,15 @@ import "./Card.css";
 
 const getHeight = (start, end) => {
   let height = 0;
-  if (start[1] > end[1]) {
-    start[0]--;
-    start[1] += 60;
+  const st = [...start];
+  const ed = [...end];
+  if (st[1] > ed[1]) {
+    st[0]--;
+    st[1] += 60;
   }
 
-  height += 60 * (end[0] - start[0]);
-  height += end[1] - start[1];
+  height += 60 * (ed[0] - st[0]);
+  height += ed[1] - st[1];
   height -= 5;
 
   return height;
