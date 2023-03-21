@@ -25,7 +25,7 @@ const getTop = (start) => {
 
 const getLeft = (day) => {
   let left = 0;
-  left += 150 * day;
+  left += 240 * day;
   return left;
 };
 

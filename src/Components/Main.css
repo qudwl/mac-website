@@ -1,18 +1,3 @@
-main {
-    width: 900px;
-    height: 900px;
-}
-
-main>div.days {
-    width: 900px;
-}
-
-main>div.days>span {
-    display: inline-block;
-    width: 150px;
-    text-align: center;
-}
-
 main>div:last-of-type {
     display: flex;
 }

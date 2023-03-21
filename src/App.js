@@ -2,7 +2,6 @@ import "./App.css";
 import React, { useState } from "react";
 import Header from "./Components/Header";
 import Main from "./Components/Main";
-import Modal from "./Components/Modal";
 
 function App() {
   const [dark, setDark] = useState(false);

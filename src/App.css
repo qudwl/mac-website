@@ -1,3 +1,7 @@
+:root {
+    --box-shadow: box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.15);
+}
+
 .App {
     display: flex;
     flex-direction: column;
@@ -15,7 +19,9 @@
     height: 50px;
 }
 
-
+.dialog {
+    box-shadow: var(--box-shadow);
+}
 
 button {
     height: 40px;

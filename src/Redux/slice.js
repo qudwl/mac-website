@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const slice = createSlice({
     name: 'data',
     initialState: {
-        classes: [
+        data: [
             {
                 subject: "CSE",
                 cid: "374",
@@ -54,7 +54,10 @@ export const slice = createSlice({
                         end: [15, 0],
                     },
                 ],
-            }
+            },
+        ],
+        curClasses: [
+
         ]
     },
     reducers: {}

@@ -12,7 +12,7 @@ const Menu = (props) => {
     }
     return (
         <div className="menu">
-            <button className="menuOpener" onClick={() => setExpanded(!expanded)} style={{ zIndex: 2 }}>
+            <button className="menuOpener" onClick={() => setExpanded(!expanded)}>
                 <List size={"2em"} />
             </button>
             <div style={style}>
