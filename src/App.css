@@ -1,64 +1,65 @@
 :root {
-    --box-shadow: box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.15);
+  --box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.15);
+  --dark-div-background: ;
 }
 
 .App {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .times span {
-    width: 50px;
-    text-align: center;
+  width: 50px;
+  text-align: center;
 }
 
 .logo img {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 .dialog {
-    box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
 }
 
 button {
-    height: 40px;
-    border: none;
-    border-radius: 20px;
-    background-color: black;
-    color: white;
-    padding: 0px 22px;
-    font-weight: bold;
-    margin: 10px;
-    transition: background-color 0.25s, box-shadow 0.25s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  padding: 0px 22px;
+  font-weight: bold;
+  margin: 10px;
+  transition: background-color 0.25s, box-shadow 0.25s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dark button {
-    background-color: rgba(255, 255, 255, 0.07);
+  background-color: rgba(255, 255, 255, 0.07);
 }
 
 .dark button:focus {
-    background-color: rgba(255, 255, 255, 0.24);
+  background-color: rgba(255, 255, 255, 0.24);
 }
 
-button>* {
-    padding: 0px 5px;
-}
-
-button:focus {
-    outline: none;
-    box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.8);
+button > * {
+  padding: 0px 5px;
 }
 
 button:focus {
-    background-color: #999;
+  outline: none;
+  box-shadow: 0px 48px 100px rgba(17, 12, 46, 0.8);
+}
+
+button:focus {
+  background-color: #999;
 }
 
 svg:focus {
-    border: 2px dotted black;
+  border: 2px dotted black;
 }

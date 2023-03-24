@@ -1,28 +1,32 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Header from "./Components/Header";
 import Main from "./Components/Main";
+import Dialog from "./Components/Dialog";
+import { useSelector, useDispatch } from "react-redux";
+import { addClassToSchedule } from "./Redux/slice";
 
 function App() {
-  const [dark, setDark] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [propsTitle, setPropsTitle] = useState("Export");
-  const [modalContent, setModalContent] = useState(<></>);
-
+  const dark = useSelector((state) => state.slice.dark);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const curClassesLocal = localStorage.getItem("curClasses");
+    if (curClassesLocal != null) {
+      const curClasses = JSON.parse(curClassesLocal);
+      for (let cl of curClasses) {
+        dispatch(addClassToSchedule(cl));
+      }
+    }
+  }, []);
   dark
     ? document.querySelector("#root").classList.add("dark")
     : document.querySelector("#root").classList.remove("dark");
 
   return (
     <div className="App">
-      <Main dark={dark} />
-      <Header
-        dark={dark}
-        openModal={setShowModal}
-        setModalTitle={setPropsTitle}
-        setDark={setDark}
-        setModalContent={setModalContent}
-      />
+      <Main />
+      <Header />
+      <Dialog />
     </div>
   );
 }

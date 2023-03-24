@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import Card from "./Card";
 import "./Schedule.css";
@@ -13,17 +12,18 @@ const colors = [
 ];
 
 const Schedule = (props) => {
-  const data = [...useSelector((state) => state.slice.data)];
+  const data = [...useSelector((state) => state.slice.curClasses)];
   const arr = [];
   let key = 0;
   for (let cl of data) {
-    const title = cl.subject + cl.cid + cl.section;
     const card = (
       <Card
-        color={colors[key]}
+        color={colors[key % colors.length]}
         times={cl.times}
         key={key++}
-        title={title}
+        subject={cl.subject}
+        cid={cl.cid}
+        section={cl.section}
         dark={props.dark}
       />
     );

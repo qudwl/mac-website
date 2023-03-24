@@ -1,4 +1,6 @@
 import "./Card.css";
+import { useDispatch } from "react-redux";
+import { removeClassFromSchedule } from "../Redux/slice";
 
 const getHeight = (start, end) => {
   let height = 0;
@@ -31,6 +33,13 @@ const getLeft = (day) => {
 
 const Card = (props) => {
   const arr = [];
+  const dispatch = useDispatch();
+  const title = `${props.subject} ${props.cid} ${props.section}`;
+  const obj = {
+    subject: props.subject,
+    cid: props.cid,
+    section: props.section,
+  };
 
   for (let time of props.times) {
     const style = {
@@ -40,18 +49,20 @@ const Card = (props) => {
       backgroundColor: props.dark ? "rgba(255, 255, 255, 0.12)" : props.color,
     };
     const el = (
-      <div className="class-card" style={style} tabIndex={0} key={props.key}>
-        <span>{props.title}</span>
+      <div
+        className="class-card"
+        style={style}
+        tabIndex={0}
+        key={props.key}
+        onClick={() => dispatch(removeClassFromSchedule(obj))}
+      >
+        <span>{title}</span>
       </div>
     );
     arr.push(el);
     console.log(el);
   }
-  return (
-    <>
-      {arr}
-    </>
-  );
+  return <>{arr}</>;
 };
 
 export default Card;

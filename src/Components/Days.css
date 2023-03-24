@@ -1,13 +1,14 @@
 .days {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
 }
 
 .days span {
-    width: 240px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
+  width: 240px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  display: block;
 }

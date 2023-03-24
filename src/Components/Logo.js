@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
+
 const Logo = (props) => {
   const width = props.width == undefined ? 100 : props.width;
-  const fill = props.dark ? "white" : "black";
+  const fill = useSelector((state) => state.slice.dark) ? "white" : "black";
   return (
     <svg
       width={width}
