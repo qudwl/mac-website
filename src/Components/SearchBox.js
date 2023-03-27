@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addClassToSchedule } from "../Redux/slice";
 import { useState } from "react";
+import Input from "@mui/joy/Input";
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
@@ -68,7 +69,7 @@ const SearchBox = (props) => {
   }
   return (
     <>
-      <input
+      <Input
         value={searchTerm}
         tabIndex={props.expanded ? 0 : -1}
         onChange={(e) => setSearchTerm(e.target.value)}
