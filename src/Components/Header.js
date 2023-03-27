@@ -3,6 +3,8 @@ import "./Header.css";
 import { changeDialogState, changeDialogContent } from "../Redux/slice";
 import { List } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
+import Button from "@mui/joy/Button";
+import IconButton from "@mui/joy/IconButton";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -21,10 +23,10 @@ const Header = () => {
   return (
     <header>
       <Logo width="40" />
-      <button onClick={() => onClickFunc("Search")}>Search</button>
-      <button className="menuOpener" onClick={() => onClickFunc("Menu")}>
+      <Button variant="solid" onClick={() => onClickFunc("Search")}>Search</Button>
+      <IconButton onClick={() => onClickFunc("Menu")}>
         <List size={"2em"} />
-      </button>
+      </IconButton>
     </header>
   );
 };

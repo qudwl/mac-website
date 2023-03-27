@@ -1,16 +1,4 @@
-.dialog input {
-  border: 0px;
-  border-bottom: 1px solid black;
-  margin: 20px;
-}
-
-.dialog input:focus {
-  outline: none;
-  border-bottom: 2px solid black;
-  margin-bottom: 19px;
-}
-
-.searchBar > span {
+.searchBar>span {
   display: flex;
   user-select: none;
   text-align: center;
@@ -28,16 +16,16 @@ header {
   width: 100%;
 }
 
-header > svg {
+header>svg {
   padding: 5px;
   background-color: white;
 }
 
-.dark header > svg {
+.dark header>svg {
   background-color: black;
 }
 
-header > * {
+header>* {
   margin: 0px 20px;
 }
 
@@ -45,7 +33,7 @@ header > * {
   margin: 0px;
 }
 
-.searchBar > *:focus {
+.searchBar>*:focus {
   box-shadow: none;
 }
 
@@ -82,11 +70,13 @@ header > * {
   width: 50px;
   padding: 0px;
 }
+
 @media screen and (max-width: 768px) {
   header {
     width: 100vw;
   }
-  header > button:first-of-type {
+
+  header>button:first-of-type {
     background-color: #232323;
     color: white;
   }
