@@ -3,12 +3,12 @@ import "./Days.css";
 const Days = () => {
   return (
     <div className="days">
-      <span></span>
-      <span>Monday</span>
-      <span>Tuesday</span>
-      <span>Wednesday</span>
-      <span>Thursday</span>
-      <span>Friday</span>
+      <p></p>
+      <p>Monday</p>
+      <p>Tuesday</p>
+      <p>Wednesday</p>
+      <p>Thursday</p>
+      <p>Friday</p>
     </div>
   );
 };

@@ -3,10 +3,11 @@
   justify-content: space-around;
   align-items: center;
   height: 60px;
+  width: 1080px;
 }
 
-.days span {
-  width: 240px;
+.days p {
+  width: 180px;
   height: 60px;
   line-height: 60px;
   text-align: center;

@@ -1,13 +1,14 @@
-main>div:last-of-type {
-    display: flex;
+main {
+  width: 1080px;
+}
+main > div:last-of-type {
+  display: flex;
 }
 
 @media screen and (max-width: 900px) {
-    main {
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        width: 100vw;
-        overflow: scroll;
-    }
+  main {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
 }

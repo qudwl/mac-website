@@ -19,7 +19,11 @@ const Dialog = () => {
       break;
   }
   return (
-    <div className={`dialog ${expanded ? "expanded" : ""}`}>
+    <div
+      className={`dialog ${expanded ? "expanded" : ""}`}
+      style={{ textAlign: "center" }}
+    >
+      <h3>{dialogContentTxt}</h3>
       {dialogContent}
     </div>
   );

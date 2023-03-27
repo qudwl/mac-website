@@ -27,7 +27,7 @@ const getTop = (start) => {
 
 const getLeft = (day) => {
   let left = 0;
-  left += 240 * day;
+  left += 180 * day;
   return left;
 };
 
@@ -56,7 +56,8 @@ const Card = (props) => {
         key={props.key}
         onClick={() => dispatch(removeClassFromSchedule(obj))}
       >
-        <span>{title}</span>
+        <h3>{title}</h3>
+        <p>{props.instructor}</p>
       </div>
     );
     arr.push(el);

@@ -16,6 +16,7 @@ const Schedule = (props) => {
   const arr = [];
   let key = 0;
   for (let cl of data) {
+    console.log(cl);
     const card = (
       <Card
         color={colors[key % colors.length]}
@@ -24,6 +25,7 @@ const Schedule = (props) => {
         subject={cl.subject}
         cid={cl.cid}
         section={cl.section}
+        instructor={cl.instructors}
         dark={props.dark}
       />
     );

@@ -1,16 +1,16 @@
 .hour-list {
-    width: 240px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    justify-content: center;
-    align-items: center;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
-.hour-list>span {
-    user-select: none;
-    display: inline-block;
-    width: 150px;
-    text-align: center;
-    height: 60px;
+.hour-list > span {
+  user-select: none;
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  height: 60px;
 }
