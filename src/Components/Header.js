@@ -8,6 +8,7 @@ import IconButton from "@mui/joy/IconButton";
 import Box from "@mui/joy/Box";
 import Menu from "./Menu";
 import { useEffect, useState } from "react";
+import { Stack } from "@mui/joy";
 
 function getWidth() {
   const { innerWidth: width } = window;
@@ -53,7 +54,7 @@ const Header = () => {
           bgcolor: "background.surface",
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
           gridColumn: "1 / -1",
           borderBottom: "1px solid",
@@ -64,17 +65,24 @@ const Header = () => {
         },
       ]}
     >
-      <Logo width="40" />
-      <Button variant="solid" onClick={() => onClickFunc("Search")}>
-        Search
-      </Button>
-      {width > 1080 ? (
-        <Menu isHeader={true} />
-      ) : (
-        <IconButton onClick={() => onClickFunc("Menu")}>
-          <List size={"2em"} />
-        </IconButton>
-      )}
+      <Stack
+        direction={"row"}
+        justifyContent="space-between"
+        sx={{ width: "100%", maxWidth: "1080px" }}
+        alignItems="center"
+      >
+        <Logo width="40" />
+        <Button variant="solid" onClick={() => onClickFunc("Search")}>
+          Search
+        </Button>
+        {width > 1080 ? (
+          <Menu isHeader={true} />
+        ) : (
+          <IconButton onClick={() => onClickFunc("Menu")}>
+            <List size={"2em"} />
+          </IconButton>
+        )}
+      </Stack>
     </Box>
   );
 };

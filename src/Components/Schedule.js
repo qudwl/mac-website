@@ -4,11 +4,11 @@ import "./Schedule.css";
 
 const colors = [
   "#FFBE0B",
-  "#3A86FF",
-  "#8338EC",
-  "#FB5607",
-  "#FF006E",
-  "#A7C957",
+  "#70D6FF",
+  "#E4E9B2",
+  "#20BF55",
+  "#C7BFDF",
+  "#EBC6CD",
 ];
 
 const Schedule = (props) => {

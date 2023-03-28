@@ -13,11 +13,6 @@ code {
     monospace;
 }
 
-body:has(.dark) {
-  background-color: #121212;
-  color: white;
-}
-
 .html2canvas-container {
   width: 1080px !important;
   height: 1920px !important;
