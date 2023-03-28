@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Link from "@mui/joy/Link";
 import Tooltip from "@mui/joy/Tooltip";
 import { useState } from "react";
+import Box from "@mui/joy/Box";
 
 const CRNList = (props) => {
   const [isOpen, setOpen] = useState(false);
@@ -44,7 +45,7 @@ const CRN = () => {
       <CRNList crn={cl.crn} title={`${cl.subject} ${cl.cid} ${cl.section}`} />
     );
   }
-  return <>{arr}</>;
+  return <Box sx={{ overflowY: "scroll" }}>{arr}</Box>;
 };
 
 export default CRN;

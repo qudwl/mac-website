@@ -24,7 +24,7 @@ function App() {
     : document.querySelector("#root").classList.remove("dark");
 
   return (
-    <Sheet sx={{ width: "100vw", height: "100vh" }}>
+    <Sheet sx={{ width: "100vw" }}>
       <Header />
       <Main />
       <Dialog />

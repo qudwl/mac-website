@@ -95,7 +95,7 @@ END:VEVENT
       <Grid>
         <Card sx={{ px: 4 }} variant="outlined">
           <FileEarmarkPdf size="2em" />
-          <Typography>PDF</Typography>
+          <Typography textAlign={"center"}>PDF</Typography>
           <Link
             overlay
             onClick={() => {
@@ -107,7 +107,7 @@ END:VEVENT
       <Grid>
         <Card sx={{ px: 4 }} variant="outlined">
           <Calendar2Date size="2em" />
-          <Typography>iCal</Typography>
+          <Typography textAlign={"center"}>iCal</Typography>
           <Link
             overlay
             onClick={() => {
