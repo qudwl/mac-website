@@ -1,8 +1,9 @@
-import { useSelector } from "react-redux";
+import { useColorScheme } from "@mui/joy";
 
 const Logo = (props) => {
-  const width = props.width == undefined ? 100 : props.width;
-  const fill = useSelector((state) => state.slice.dark) ? "white" : "black";
+  const { mode } = useColorScheme();
+  const width = props.width;
+  const fill = mode === "dark" ? "white" : "black";
   return (
     <svg
       width={width}

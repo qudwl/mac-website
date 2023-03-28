@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.hour-list > span {
+.hour-list > p {
   user-select: none;
   display: inline-block;
   width: 180px;

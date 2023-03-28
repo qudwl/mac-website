@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import Card from "./Card";
+import CCard from "./CCard";
 import "./Schedule.css";
 
 const colors = [
@@ -16,9 +16,8 @@ const Schedule = (props) => {
   const arr = [];
   let key = 0;
   for (let cl of data) {
-    console.log(cl);
     const card = (
-      <Card
+      <CCard
         color={colors[key % colors.length]}
         times={cl.times}
         key={key++}
@@ -26,7 +25,6 @@ const Schedule = (props) => {
         cid={cl.cid}
         section={cl.section}
         instructor={cl.instructors}
-        dark={props.dark}
       />
     );
     arr.push(card);

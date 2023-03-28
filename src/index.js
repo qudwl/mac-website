@@ -1,19 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import "@fontsource/inter";
-import '@fontsource/public-sans';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import store from './store'
+import "@fontsource/public-sans";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import store from "./store";
+import { CssVarsProvider } from "@mui/joy/styles";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <CssVarsProvider defaultMode="system">
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </CssVarsProvider>
   </React.StrictMode>
 );
 

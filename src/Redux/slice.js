@@ -14,6 +14,7 @@ export const slice = createSlice({
           { day: 0, start: [8, 30], end: [9, 50] },
           { day: 2, start: [8, 30], end: [9, 50] },
         ],
+        crn: 13884,
       },
       {
         subject: "CSE",
@@ -25,6 +26,7 @@ export const slice = createSlice({
           { day: 0, start: [10, 5], end: [11, 25] },
           { day: 2, start: [10, 5], end: [11, 25] },
         ],
+        crn: 13885,
       },
       {
         subject: "CSE",
@@ -36,6 +38,7 @@ export const slice = createSlice({
           { day: 0, start: [13, 15], end: [14, 35] },
           { day: 2, start: [13, 15], end: [14, 35] },
         ],
+        crn: 13887,
       },
       {
         subject: "CSE",
@@ -47,6 +50,7 @@ export const slice = createSlice({
           { day: 0, start: [14, 50], end: [16, 10] },
           { day: 2, start: [14, 50], end: [16, 10] },
         ],
+        crn: 13888,
       },
       {
         subject: "CSE",
@@ -58,6 +62,7 @@ export const slice = createSlice({
           { day: 0, start: [16, 25], end: [17, 45] },
           { day: 2, start: [16, 25], end: [17, 45] },
         ],
+        crn: 13889,
       },
       {
         subject: "CSE",
@@ -69,6 +74,7 @@ export const slice = createSlice({
           { day: 0, start: [8, 30], end: [9, 50] },
           { day: 2, start: [8, 30], end: [9, 50] },
         ],
+        crn: 17374,
       },
       {
         subject: "CSE",
@@ -80,6 +86,7 @@ export const slice = createSlice({
           { day: 0, start: [10, 5], end: [11, 25] },
           { day: 2, start: [10, 5], end: [11, 25] },
         ],
+        crn: 15728,
       },
       {
         subject: "CSE",
@@ -91,6 +98,7 @@ export const slice = createSlice({
           { day: 0, start: [11, 40], end: [13, 0] },
           { day: 2, start: [11, 40], end: [13, 0] },
         ],
+        crn: 13891,
       },
       {
         subject: "CSE",
@@ -102,6 +110,7 @@ export const slice = createSlice({
           { day: 0, start: [13, 15], end: [14, 35] },
           { day: 2, start: [13, 15], end: [14, 35] },
         ],
+        crn: 13892,
       },
       {
         subject: "CSE",
@@ -113,6 +122,7 @@ export const slice = createSlice({
           { day: 0, start: [18, 30], end: [19, 50] },
           { day: 2, start: [18, 30], end: [19, 50] },
         ],
+        crn: 15253,
       },
       {
         subject: "CSE",
@@ -124,6 +134,7 @@ export const slice = createSlice({
           { day: 1, start: [8, 30], end: [9, 50] },
           { day: 3, start: [8, 30], end: [9, 50] },
         ],
+        crn: 13895,
       },
       {
         subject: "CSE",
@@ -135,6 +146,7 @@ export const slice = createSlice({
           { day: 1, start: [10, 5], end: [11, 25] },
           { day: 3, start: [10, 5], end: [11, 25] },
         ],
+        crn: 13896,
       },
       {
         subject: "CSE",
@@ -146,6 +158,7 @@ export const slice = createSlice({
           { day: 1, start: [11, 40], end: [13, 0] },
           { day: 3, start: [11, 40], end: [13, 0] },
         ],
+        crn: 13897,
       },
       {
         subject: "CSE",
@@ -157,6 +170,7 @@ export const slice = createSlice({
           { day: 1, start: [14, 50], end: [16, 10] },
           { day: 3, start: [14, 50], end: [16, 10] },
         ],
+        crn: 16706,
       },
       {
         subject: "CSE",
@@ -168,6 +182,7 @@ export const slice = createSlice({
           { day: 1, start: [16, 25], end: [17, 45] },
           { day: 3, start: [16, 25], end: [17, 45] },
         ],
+        crn: 13899,
       },
       {
         subject: "CSE",
@@ -179,6 +194,7 @@ export const slice = createSlice({
           { day: 1, start: [14, 50], end: [16, 10] },
           { day: 3, start: [14, 50], end: [16, 10] },
         ],
+        crn: 15006,
       },
       {
         subject: "CSE",
@@ -190,6 +206,7 @@ export const slice = createSlice({
           { day: 1, start: [10, 5], end: [11, 55] },
           { day: 4, start: [10, 5], end: [11, 55] },
         ],
+        crn: 11854,
       },
       {
         subject: "CSE",
@@ -201,6 +218,7 @@ export const slice = createSlice({
           { day: 1, start: [10, 5], end: [11, 55] },
           { day: 3, start: [10, 5], end: [11, 55] },
         ],
+        crn: 16179,
       },
       {
         subject: "CSE",
@@ -212,6 +230,7 @@ export const slice = createSlice({
           { day: 4, start: [24, 14], end: [14, 0] },
           { day: 1, start: [24, 14], end: [14, 0] },
         ],
+        crn: 13094,
       },
       {
         subject: "CSE",
@@ -223,6 +242,7 @@ export const slice = createSlice({
           { day: 1, start: [24, 10], end: [14, 0] },
           { day: 3, start: [24, 10], end: [14, 0] },
         ],
+        crn: 11855,
       },
       {
         subject: "CSE",
@@ -235,6 +255,7 @@ export const slice = createSlice({
           { day: 2, start: [8, 30], end: [9, 25] },
           { day: 4, start: [8, 30], end: [9, 25] },
         ],
+        crn: 15009,
       },
       {
         subject: "CSE",
@@ -247,6 +268,7 @@ export const slice = createSlice({
           { day: 2, start: [8, 30], end: [9, 25] },
           { day: 3, start: [8, 30], end: [9, 25] },
         ],
+        crn: 11856,
       },
       {
         subject: "CSE",
@@ -259,6 +281,7 @@ export const slice = createSlice({
           { day: 0, start: [10, 5], end: [11, 0] },
           { day: 4, start: [10, 5], end: [11, 0] },
         ],
+        crn: 12362,
       },
       {
         subject: "CSE",
@@ -271,6 +294,7 @@ export const slice = createSlice({
           { day: 0, start: [10, 5], end: [11, 0] },
           { day: 3, start: [10, 5], end: [11, 0] },
         ],
+        crn: 12481,
       },
       {
         subject: "CSE",
@@ -283,6 +307,7 @@ export const slice = createSlice({
           { day: 0, start: [24, 10], end: [14, 0] },
           { day: 2, start: [24, 10], end: [14, 0] },
         ],
+        crn: 16180,
       },
       {
         subject: "CSE",
@@ -295,6 +320,7 @@ export const slice = createSlice({
           { day: 2, start: [24, 5], end: [13, 0] },
           { day: 3, start: [24, 5], end: [13, 0] },
         ],
+        crn: 16181,
       },
       {
         subject: "CSE",
@@ -307,6 +333,7 @@ export const slice = createSlice({
           { day: 2, start: [14, 15], end: [15, 10] },
           { day: 4, start: [14, 15], end: [15, 10] },
         ],
+        crn: 14170,
       },
       {
         subject: "CSE",
@@ -319,6 +346,7 @@ export const slice = createSlice({
           { day: 2, start: [14, 15], end: [15, 10] },
           { day: 3, start: [14, 15], end: [15, 10] },
         ],
+        crn: 17329,
       },
       {
         subject: "CSE",
@@ -330,6 +358,7 @@ export const slice = createSlice({
           { day: 2, start: [8, 30], end: [9, 50] },
           { day: 4, start: [8, 30], end: [9, 50] },
         ],
+        crn: 11857,
       },
       {
         subject: "CSE",
@@ -341,6 +370,7 @@ export const slice = createSlice({
           { day: 2, start: [11, 40], end: [13, 0] },
           { day: 4, start: [11, 40], end: [13, 0] },
         ],
+        crn: 15016,
       },
       {
         subject: "CSE",
@@ -352,6 +382,7 @@ export const slice = createSlice({
           { day: 1, start: [13, 15], end: [14, 35] },
           { day: 3, start: [13, 15], end: [14, 35] },
         ],
+        crn: 15884,
       },
       {
         subject: "CSE",
@@ -363,6 +394,7 @@ export const slice = createSlice({
           { day: 1, start: [14, 50], end: [16, 10] },
           { day: 3, start: [14, 50], end: [16, 10] },
         ],
+        crn: 18881,
       },
       {
         subject: "CSE",
@@ -374,6 +406,7 @@ export const slice = createSlice({
           { day: 1, start: [13, 15], end: [14, 35] },
           { day: 3, start: [13, 15], end: [14, 35] },
         ],
+        crn: 19288,
       },
       {
         subject: "CSE",
@@ -385,6 +418,7 @@ export const slice = createSlice({
           { day: 1, start: [14, 50], end: [16, 5] },
           { day: 3, start: [14, 50], end: [16, 5] },
         ],
+        crn: 19289,
       },
       {
         subject: "CSE",
@@ -396,6 +430,7 @@ export const slice = createSlice({
           { day: 2, start: [13, 15], end: [14, 35] },
           { day: 4, start: [13, 15], end: [14, 35] },
         ],
+        crn: 13127,
       },
       {
         subject: "CSE",
@@ -407,6 +442,7 @@ export const slice = createSlice({
           { day: 2, start: [14, 50], end: [16, 10] },
           { day: 4, start: [14, 50], end: [16, 10] },
         ],
+        crn: 14034,
       },
       {
         subject: "CSE",
@@ -418,6 +454,7 @@ export const slice = createSlice({
           { day: 0, start: [17, 0], end: [18, 20] },
           { day: 2, start: [17, 0], end: [18, 20] },
         ],
+        crn: 13213,
       },
       {
         subject: "CSE",
@@ -429,6 +466,7 @@ export const slice = createSlice({
           { day: 0, start: [18, 30], end: [19, 50] },
           { day: 2, start: [18, 30], end: [19, 50] },
         ],
+        crn: 14509,
       },
       {
         subject: "CSE",
@@ -440,6 +478,7 @@ export const slice = createSlice({
           { day: 1, start: [16, 25], end: [17, 45] },
           { day: 3, start: [16, 25], end: [17, 45] },
         ],
+        crn: 13518,
       },
       {
         subject: "CSE",
@@ -451,6 +490,7 @@ export const slice = createSlice({
           { day: 1, start: [8, 0], end: [9, 20] },
           { day: 3, start: [8, 0], end: [9, 20] },
         ],
+        crn: 14456,
       },
       {
         subject: "CSE",
@@ -462,6 +502,7 @@ export const slice = createSlice({
           { day: 0, start: [8, 30], end: [9, 50] },
           { day: 2, start: [8, 30], end: [9, 50] },
         ],
+        crn: 11858,
       },
       {
         subject: "CSE",
@@ -473,6 +514,7 @@ export const slice = createSlice({
           { day: 0, start: [10, 5], end: [11, 25] },
           { day: 2, start: [10, 5], end: [11, 25] },
         ],
+        crn: 11859,
       },
       {
         subject: "CSE",
@@ -484,6 +526,7 @@ export const slice = createSlice({
           { day: 1, start: [10, 5], end: [11, 25] },
           { day: 3, start: [10, 5], end: [11, 25] },
         ],
+        crn: 16182,
       },
       {
         subject: "CSE",
@@ -495,6 +538,7 @@ export const slice = createSlice({
           { day: 1, start: [11, 40], end: [13, 0] },
           { day: 3, start: [11, 40], end: [13, 0] },
         ],
+        crn: 15010,
       },
       {
         subject: "CSE",
@@ -506,6 +550,7 @@ export const slice = createSlice({
           { day: 2, start: [10, 5], end: [11, 55] },
           { day: 4, start: [10, 5], end: [11, 55] },
         ],
+        crn: 11860,
       },
       {
         subject: "CSE",
@@ -517,6 +562,7 @@ export const slice = createSlice({
           { day: 2, start: [14, 15], end: [16, 5] },
           { day: 4, start: [14, 15], end: [16, 5] },
         ],
+        crn: 15011,
       },
       {
         subject: "CSE",
@@ -528,6 +574,7 @@ export const slice = createSlice({
           { day: 2, start: [16, 25], end: [18, 15] },
           { day: 4, start: [16, 25], end: [18, 15] },
         ],
+        crn: 12798,
       },
       {
         subject: "CSE",
@@ -539,6 +586,7 @@ export const slice = createSlice({
           { day: 2, start: [8, 0], end: [9, 50] },
           { day: 4, start: [8, 0], end: [9, 50] },
         ],
+        crn: 16183,
       },
       {
         subject: "CSE",
@@ -550,6 +598,7 @@ export const slice = createSlice({
           { day: 2, start: [24, 10], end: [14, 0] },
           { day: 4, start: [24, 10], end: [14, 0] },
         ],
+        crn: 18883,
       },
       {
         subject: "CSE",
@@ -561,6 +610,7 @@ export const slice = createSlice({
           { day: 3, start: [8, 30], end: [9, 50] },
           { day: 0, start: [8, 30], end: [9, 50] },
         ],
+        crn: 13095,
       },
       {
         subject: "CSE",
@@ -572,6 +622,7 @@ export const slice = createSlice({
           { day: 3, start: [8, 30], end: [9, 50] },
           { day: 1, start: [8, 30], end: [9, 50] },
         ],
+        crn: 11861,
       },
       {
         subject: "CSE",
@@ -583,6 +634,7 @@ export const slice = createSlice({
           { day: 3, start: [10, 5], end: [11, 25] },
           { day: 0, start: [10, 5], end: [11, 25] },
         ],
+        crn: 12482,
       },
       {
         subject: "CSE",
@@ -594,6 +646,7 @@ export const slice = createSlice({
           { day: 3, start: [10, 5], end: [11, 25] },
           { day: 1, start: [10, 5], end: [11, 25] },
         ],
+        crn: 15641,
       },
       {
         subject: "CSE",
@@ -605,6 +658,7 @@ export const slice = createSlice({
           { day: 4, start: [11, 40], end: [13, 0] },
           { day: 1, start: [11, 40], end: [13, 0] },
         ],
+        crn: 13520,
       },
       {
         subject: "CSE",
@@ -616,6 +670,7 @@ export const slice = createSlice({
           { day: 4, start: [11, 40], end: [13, 0] },
           { day: 2, start: [11, 40], end: [13, 0] },
         ],
+        crn: 13683,
       },
       {
         subject: "CSE",
@@ -627,6 +682,7 @@ export const slice = createSlice({
           { day: 4, start: [13, 15], end: [14, 35] },
           { day: 1, start: [13, 15], end: [14, 35] },
         ],
+        crn: 18884,
       },
       {
         subject: "CSE",
@@ -635,6 +691,7 @@ export const slice = createSlice({
         title: "Data Abstractions & Structures",
         instructors: "Johnson, Cynthia",
         times: [{ day: 4, start: [13, 15], end: [14, 35] }],
+        crn: 18885,
       },
       {
         subject: "CSE",
@@ -646,6 +703,7 @@ export const slice = createSlice({
           { day: 0, start: [11, 40], end: [13, 0] },
           { day: 2, start: [11, 40], end: [13, 0] },
         ],
+        crn: 19290,
       },
       {
         subject: "CSE",
@@ -657,6 +715,7 @@ export const slice = createSlice({
           { day: 0, start: [14, 50], end: [16, 5] },
           { day: 2, start: [14, 50], end: [16, 5] },
         ],
+        crn: 19291,
       },
       {
         subject: "CSE",
@@ -669,6 +728,7 @@ export const slice = createSlice({
           { day: 4, start: [24, 5], end: [13, 0] },
           { day: 0, start: [24, 5], end: [13, 0] },
         ],
+        crn: 11862,
       },
       {
         subject: "CSE",
@@ -681,6 +741,7 @@ export const slice = createSlice({
           { day: 4, start: [14, 15], end: [15, 10] },
           { day: 0, start: [14, 15], end: [15, 10] },
         ],
+        crn: 13096,
       },
       {
         subject: "CSE",
@@ -692,6 +753,7 @@ export const slice = createSlice({
           { day: 3, start: [8, 0], end: [9, 50] },
           { day: 0, start: [8, 0], end: [9, 50] },
         ],
+        crn: 15642,
       },
       {
         subject: "CSE",
@@ -703,6 +765,7 @@ export const slice = createSlice({
           { day: 3, start: [8, 0], end: [9, 50] },
           { day: 1, start: [8, 0], end: [9, 50] },
         ],
+        crn: 16184,
       },
       {
         subject: "CSE",
@@ -714,6 +777,7 @@ export const slice = createSlice({
           { day: 3, start: [10, 5], end: [11, 55] },
           { day: 0, start: [10, 5], end: [11, 55] },
         ],
+        crn: 14549,
       },
       {
         subject: "CSE",
@@ -725,6 +789,7 @@ export const slice = createSlice({
           { day: 3, start: [10, 5], end: [11, 55] },
           { day: 1, start: [10, 5], end: [11, 55] },
         ],
+        crn: 14550,
       },
       {
         subject: "CSE",
@@ -736,6 +801,7 @@ export const slice = createSlice({
           { day: 2, start: [8, 30], end: [9, 50] },
           { day: 4, start: [8, 30], end: [9, 50] },
         ],
+        crn: 18918,
       },
       {
         subject: "CSE",
@@ -747,6 +813,7 @@ export const slice = createSlice({
           { day: 1, start: [10, 5], end: [11, 25] },
           { day: 3, start: [10, 5], end: [11, 25] },
         ],
+        crn: 19284,
       },
       {
         subject: "CSE",
@@ -758,6 +825,7 @@ export const slice = createSlice({
           { day: 2, start: [13, 15], end: [14, 35] },
           { day: 4, start: [13, 15], end: [14, 35] },
         ],
+        crn: 15014,
       },
       {
         subject: "CSE",
@@ -769,6 +837,7 @@ export const slice = createSlice({
           { day: 1, start: [8, 30], end: [9, 50] },
           { day: 3, start: [8, 30], end: [9, 50] },
         ],
+        crn: 15643,
       },
       {
         subject: "CSE",
@@ -780,6 +849,7 @@ export const slice = createSlice({
           { day: 1, start: [10, 5], end: [11, 25] },
           { day: 3, start: [10, 5], end: [11, 25] },
         ],
+        crn: 15015,
       },
       {
         subject: "CSE",
@@ -792,6 +862,7 @@ export const slice = createSlice({
           { day: 4, start: [10, 5], end: [11, 0] },
           { day: 0, start: [10, 5], end: [11, 0] },
         ],
+        crn: 18924,
       },
       {
         subject: "CSE",
@@ -804,6 +875,7 @@ export const slice = createSlice({
           { day: 4, start: [13, 15], end: [14, 10] },
           { day: 0, start: [13, 15], end: [14, 10] },
         ],
+        crn: 11863,
       },
       {
         subject: "CSE",
@@ -815,6 +887,7 @@ export const slice = createSlice({
           { day: 1, start: [24, 10], end: [14, 0] },
           { day: 3, start: [24, 10], end: [14, 0] },
         ],
+        crn: 13522,
       },
       {
         subject: "CSE",
@@ -826,6 +899,7 @@ export const slice = createSlice({
           { day: 1, start: [14, 15], end: [16, 5] },
           { day: 3, start: [14, 15], end: [16, 5] },
         ],
+        crn: 16185,
       },
       {
         subject: "CSE",
@@ -837,6 +911,7 @@ export const slice = createSlice({
           { day: 0, start: [8, 30], end: [9, 50] },
           { day: 2, start: [8, 30], end: [9, 50] },
         ],
+        crn: 17331,
       },
       {
         subject: "CSE",
@@ -848,6 +923,7 @@ export const slice = createSlice({
           { day: 0, start: [10, 5], end: [11, 25] },
           { day: 2, start: [10, 5], end: [11, 25] },
         ],
+        crn: 17332,
       },
       {
         subject: "CSE",
@@ -859,6 +935,7 @@ export const slice = createSlice({
           { day: 0, start: [13, 15], end: [14, 35] },
           { day: 2, start: [13, 15], end: [14, 35] },
         ],
+        crn: 18925,
       },
       {
         subject: "CSE",
@@ -870,6 +947,7 @@ export const slice = createSlice({
           { day: 3, start: [8, 30], end: [9, 50] },
           { day: 1, start: [8, 30], end: [9, 50] },
         ],
+        crn: 11887,
       },
       {
         subject: "CSE",
@@ -881,6 +959,7 @@ export const slice = createSlice({
           { day: 3, start: [8, 30], end: [9, 50] },
           { day: 2, start: [8, 30], end: [9, 50] },
         ],
+        crn: 14039,
       },
       {
         subject: "CSE",
@@ -892,6 +971,7 @@ export const slice = createSlice({
           { day: 3, start: [10, 5], end: [11, 25] },
           { day: 1, start: [10, 5], end: [11, 25] },
         ],
+        crn: 15012,
       },
       {
         subject: "CSE",
@@ -903,6 +983,7 @@ export const slice = createSlice({
           { day: 3, start: [10, 5], end: [11, 25] },
           { day: 2, start: [10, 5], end: [11, 25] },
         ],
+        crn: 15013,
       },
       {
         subject: "CSE",
@@ -914,6 +995,7 @@ export const slice = createSlice({
           { day: 0, start: [8, 30], end: [9, 50] },
           { day: 2, start: [8, 30], end: [9, 50] },
         ],
+        crn: 11864,
       },
       {
         subject: "CSE",
@@ -925,6 +1007,7 @@ export const slice = createSlice({
           { day: 0, start: [10, 5], end: [11, 25] },
           { day: 2, start: [10, 5], end: [11, 25] },
         ],
+        crn: 12799,
       },
       {
         subject: "CSE",
@@ -936,6 +1019,7 @@ export const slice = createSlice({
           { day: 0, start: [13, 15], end: [14, 35] },
           { day: 2, start: [13, 15], end: [14, 35] },
         ],
+        crn: 15206,
       },
       {
         subject: "CSE",
@@ -947,6 +1031,7 @@ export const slice = createSlice({
           { day: 0, start: [14, 50], end: [16, 10] },
           { day: 2, start: [14, 50], end: [16, 10] },
         ],
+        crn: 18928,
       },
       {
         subject: "CSE",
@@ -958,6 +1043,7 @@ export const slice = createSlice({
           { day: 0, start: [14, 50], end: [16, 10] },
           { day: 2, start: [14, 50], end: [16, 10] },
         ],
+        crn: 15631,
       },
       {
         subject: "CSE",
@@ -969,6 +1055,7 @@ export const slice = createSlice({
           { day: 0, start: [16, 25], end: [18, 15] },
           { day: 2, start: [16, 25], end: [18, 15] },
         ],
+        crn: 15632,
       },
       {
         subject: "CSE",
@@ -980,6 +1067,7 @@ export const slice = createSlice({
           { day: 2, start: [11, 40], end: [13, 0] },
           { day: 4, start: [11, 40], end: [13, 0] },
         ],
+        crn: 19285,
       },
       {
         subject: "CSE",
@@ -991,6 +1079,7 @@ export const slice = createSlice({
           { day: 1, start: [11, 40], end: [13, 0] },
           { day: 3, start: [11, 40], end: [13, 0] },
         ],
+        crn: 17333,
       },
       {
         subject: "CSE",
@@ -1002,432 +1091,7 @@ export const slice = createSlice({
           { day: 0, start: [14, 50], end: [16, 10] },
           { day: 2, start: [14, 50], end: [16, 10] },
         ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 432,
-        title: "Machine Learning",
-        instructors: "Feng, Xianglong",
-        times: [
-          { day: 0, start: [16, 25], end: [17, 45] },
-          { day: 2, start: [16, 25], end: [17, 45] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 443,
-        title: "High Performance Computing",
-        instructors: "Rao, Dhananjai",
-        times: [
-          { day: 0, start: [14, 50], end: [16, 10] },
-          { day: 2, start: [14, 50], end: [16, 10] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 443,
-        title: "High Performance Computing",
-        instructors: "Rao, Dhananjai",
-        times: [
-          { day: 0, start: [16, 25], end: [17, 45] },
-          { day: 2, start: [16, 25], end: [17, 45] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 448,
-        title: "Senior Design Project",
-        instructors: "Stahr, Lynn",
-        times: [
-          { day: 1, start: [18, 30], end: [19, 25] },
-          { day: 3, start: [18, 30], end: [19, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 448,
-        title: "Senior Design Project",
-        instructors: "Stahr, Lynn",
-        times: [
-          { day: 1, start: [18, 30], end: [19, 25] },
-          { day: 3, start: [18, 30], end: [19, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "C",
-        cid: 448,
-        title: "Senior Design Project",
-        instructors: "Stahr, Lynn",
-        times: [
-          { day: 1, start: [18, 30], end: [19, 25] },
-          { day: 3, start: [18, 30], end: [19, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 449,
-        title: "Senior Design Project",
-        instructors: "Stahr, Lynn",
-        times: [
-          { day: 1, start: [18, 30], end: [19, 25] },
-          { day: 3, start: [18, 30], end: [19, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 465,
-        title: "Comparative Prog. Languages",
-        instructors: "Femiani, John",
-        times: [
-          { day: 1, start: [10, 5], end: [11, 25] },
-          { day: 3, start: [10, 5], end: [11, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 465,
-        title: "Comparative Prog. Languages",
-        instructors: "Femiani, John",
-        times: [
-          { day: 1, start: [11, 40], end: [13, 0] },
-          { day: 3, start: [11, 40], end: [13, 0] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "C",
-        cid: 465,
-        title: "Comparative Prog. Languages",
-        instructors: "Femiani, John",
-        times: [
-          { day: 1, start: [14, 50], end: [16, 10] },
-          { day: 3, start: [14, 50], end: [16, 10] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 466,
-        title: "Bioinformatics Computing Skill",
-        instructors: "Liang, Chun",
-        times: [
-          { day: 1, start: [10, 5], end: [11, 25] },
-          { day: 3, start: [10, 5], end: [11, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 467,
-        title: "Computer and Network Security",
-        instructors: "Bhunia, Suman",
-        times: [
-          { day: 1, start: [13, 15], end: [14, 35] },
-          { day: 3, start: [13, 15], end: [14, 35] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 467,
-        title: "Computer and Network Security",
-        instructors: "Bhunia, Suman",
-        times: [
-          { day: 1, start: [14, 50], end: [16, 10] },
-          { day: 3, start: [14, 50], end: [16, 10] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 473,
-        title: "Automata Forml Lang&Computblty",
-        instructors: "Inclezan, Daniela",
-        times: [
-          { day: 0, start: [13, 15], end: [14, 35] },
-          { day: 2, start: [13, 15], end: [14, 35] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 478,
-        title: "Soft Computing Techniques",
-        instructors: "Sevkli, Aise",
-        times: [
-          { day: 2, start: [10, 5], end: [11, 25] },
-          { day: 4, start: [10, 5], end: [11, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 486,
-        title: "Intro Artificial Intelligence",
-        instructors: "Bibak, Khodakhast",
-        times: [
-          { day: 2, start: [11, 40], end: [13, 0] },
-          { day: 4, start: [11, 40], end: [13, 0] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 486,
-        title: "Intro Artificial Intelligence",
-        instructors: "Bibak, Khodakhast",
-        times: [
-          { day: 2, start: [14, 50], end: [16, 10] },
-          { day: 4, start: [14, 50], end: [16, 10] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 489,
-        title: "Game Engine Design",
-        instructors: "Bachmann, Eric",
-        times: [
-          { day: 1, start: [13, 15], end: [14, 35] },
-          { day: 3, start: [13, 15], end: [14, 35] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 501,
-        title: "Software Quality Assurance",
-        instructors: "Vendome, Christopher",
-        times: [
-          { day: 2, start: [11, 40], end: [13, 0] },
-          { day: 4, start: [11, 40], end: [13, 0] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 511,
-        title: "Model-Driven Software Eng",
-        instructors: "Rapos, Eric",
-        times: [
-          { day: 1, start: [11, 40], end: [13, 0] },
-          { day: 3, start: [11, 40], end: [13, 0] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 532,
-        title: "Machine Learning",
-        instructors: "Feng, Xianglong",
-        times: [
-          { day: 0, start: [14, 50], end: [16, 10] },
-          { day: 2, start: [14, 50], end: [16, 10] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 532,
-        title: "Machine Learning",
-        instructors: "Feng, Xianglong",
-        times: [
-          { day: 0, start: [16, 25], end: [17, 45] },
-          { day: 2, start: [16, 25], end: [17, 45] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 543,
-        title: "High Performance Computing",
-        instructors: "Rao, Dhananjai",
-        times: [
-          { day: 0, start: [14, 50], end: [16, 10] },
-          { day: 2, start: [14, 50], end: [16, 10] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 543,
-        title: "High Performance Computing",
-        instructors: "Rao, Dhananjai",
-        times: [
-          { day: 0, start: [16, 25], end: [17, 45] },
-          { day: 2, start: [16, 25], end: [17, 45] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 565,
-        title: "Comparative Prog. Languages",
-        instructors: "Femiani, John",
-        times: [
-          { day: 1, start: [10, 5], end: [11, 25] },
-          { day: 3, start: [10, 5], end: [11, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 565,
-        title: "Comparative Prog. Languages",
-        instructors: "Femiani, John",
-        times: [
-          { day: 1, start: [11, 40], end: [13, 0] },
-          { day: 3, start: [11, 40], end: [13, 0] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "C",
-        cid: 565,
-        title: "Comparative Prog. Languages",
-        instructors: "Femiani, John",
-        times: [
-          { day: 1, start: [14, 50], end: [16, 10] },
-          { day: 3, start: [14, 50], end: [16, 10] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 566,
-        title: "Bioinformatics Computing Skill",
-        instructors: "Liang, Chun",
-        times: [
-          { day: 1, start: [10, 5], end: [11, 25] },
-          { day: 3, start: [10, 5], end: [11, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 567,
-        title: "Computer and Network Security",
-        instructors: "Bhunia, Suman",
-        times: [
-          { day: 1, start: [13, 15], end: [14, 35] },
-          { day: 3, start: [13, 15], end: [14, 35] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 567,
-        title: "Computer and Network Security",
-        instructors: "Bhunia, Suman",
-        times: [
-          { day: 1, start: [14, 50], end: [16, 10] },
-          { day: 3, start: [14, 50], end: [16, 10] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 573,
-        title: "Automata Forml Lang&Computblty",
-        instructors: "Inclezan, Daniela",
-        times: [
-          { day: 0, start: [13, 15], end: [14, 35] },
-          { day: 2, start: [13, 15], end: [14, 35] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 578,
-        title: "Soft Computing Techniques",
-        instructors: "Sevkli, Aise",
-        times: [
-          { day: 2, start: [10, 5], end: [11, 25] },
-          { day: 4, start: [10, 5], end: [11, 25] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 586,
-        title: "Intro Artificial Intelligence",
-        instructors: "Bibak, Khodakhast",
-        times: [
-          { day: 2, start: [11, 40], end: [13, 0] },
-          { day: 4, start: [11, 40], end: [13, 0] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "B",
-        cid: 586,
-        title: "Intro Artificial Intelligence",
-        instructors: "Bibak, Khodakhast",
-        times: [
-          { day: 2, start: [14, 50], end: [16, 10] },
-          { day: 4, start: [14, 50], end: [16, 10] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 589,
-        title: "Game Engine Design",
-        instructors: "Bachmann, Eric",
-        times: [
-          { day: 1, start: [13, 15], end: [14, 35] },
-          { day: 3, start: [13, 15], end: [14, 35] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 601,
-        title: "Comp Sci Research Methods",
-        instructors: "Rapos, Eric",
-        times: [
-          { day: 1, start: [13, 15], end: [14, 35] },
-          { day: 3, start: [13, 15], end: [14, 35] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: 611,
-        title: "Seminar Attendance Requirement",
-        instructors: "Inclezan, Daniela",
-        times: [],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: "620A",
-        title: "Knowledge Representation",
-        instructors: "Inclezan, Daniela",
-        times: [
-          { day: 0, start: [11, 40], end: [13, 0] },
-          { day: 2, start: [11, 40], end: [13, 0] },
-        ],
-      },
-      {
-        subject: "CSE",
-        section: "A",
-        cid: "620E",
-        title: "Predictive Models for Health",
-        instructors: "Giabbanelli, Philippe",
-        times: [
-          { day: 2, start: [10, 5], end: [11, 25] },
-          { day: 4, start: [10, 5], end: [11, 25] },
-        ],
+        crn: 17335,
       },
     ],
     curClasses: [],
@@ -1445,9 +1109,26 @@ export const slice = createSlice({
           cl.cid == state.curClasses[tcl].cid
         ) {
           return;
+        } else {
+          for (let tcl2 in state.curClasses[tcl].times) {
+            for (let cl2 in cl.times) {
+              if (
+                state.curClasses[tcl].times[tcl2].day == cl.times[cl2].day &&
+                ((state.curClasses[tcl].times[tcl2].end[0] ==
+                  cl.times[cl2].start[0] &&
+                  state.curClasses[tcl].times[tcl2].end[1] >
+                    cl.times[cl2].start[1]) ||
+                  state.curClasses[tcl].times[tcl2].end[0] >
+                    cl.times[cl2].start[0])
+              ) {
+                return;
+              }
+            }
+          }
         }
       }
       state.curClasses.push(cl);
+      localStorage.setItem("curClasses", JSON.stringify(state.curClasses));
     },
     removeClassFromSchedule: (state, action) => {
       const cl = action.payload;
@@ -1458,6 +1139,7 @@ export const slice = createSlice({
           cl.cid == state.curClasses[tcl].cid
         ) {
           state.curClasses.splice(tcl, 1);
+          localStorage.setItem("curClasses", JSON.stringify(state.curClasses));
           return;
         }
       }

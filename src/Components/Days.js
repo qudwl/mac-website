@@ -1,14 +1,16 @@
+import Typography from "@mui/joy/Typography";
+
 import "./Days.css";
 
 const Days = () => {
   return (
     <div className="days">
-      <p></p>
-      <p>Monday</p>
-      <p>Tuesday</p>
-      <p>Wednesday</p>
-      <p>Thursday</p>
-      <p>Friday</p>
+      <Typography></Typography>
+      <Typography>Monday</Typography>
+      <Typography>Tuesday</Typography>
+      <Typography>Wednesday</Typography>
+      <Typography>Thursday</Typography>
+      <Typography>Friday</Typography>
     </div>
   );
 };

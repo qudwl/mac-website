@@ -5,6 +5,7 @@ import Main from "./Components/Main";
 import Dialog from "./Components/Dialog";
 import { useSelector, useDispatch } from "react-redux";
 import { addClassToSchedule } from "./Redux/slice";
+import Sheet from "@mui/joy/Sheet";
 
 function App() {
   const dark = useSelector((state) => state.slice.dark);
@@ -23,11 +24,11 @@ function App() {
     : document.querySelector("#root").classList.remove("dark");
 
   return (
-    <div className="App">
-      <Main />
+    <Sheet sx={{ width: "100vw", height: "100vh" }}>
       <Header />
+      <Main />
       <Dialog />
-    </div>
+    </Sheet>
   );
 }
 

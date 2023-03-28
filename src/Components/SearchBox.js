@@ -1,7 +1,14 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addClassToSchedule } from "../Redux/slice";
+import { addClassToSchedule, removeClassFromSchedule } from "../Redux/slice";
 import { useState } from "react";
+import { Search } from "react-bootstrap-icons";
 import Input from "@mui/joy/Input";
+import Card from "@mui/joy/Card";
+import Typography from "@mui/joy/Typography";
+import Link from "@mui/joy/Link";
+import Chip from "@mui/joy/Chip";
+import Box from "@mui/joy/Box";
+import Stack from "@mui/joy/Stack";
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
@@ -26,56 +33,91 @@ const useData = (text) => {
 const SearchResult = (props) => {
   const arr = [];
   for (let t of props.times) {
-    arr.push(<p>{`${days[t.day]} ${t.start.join(":")}-${t.end.join(":")}`}</p>);
+    arr.push(
+      <Typography level="body3">{`${days[t.day]} ${t.start.join(
+        ":"
+      )}-${t.end.join(":")}`}</Typography>
+    );
   }
   return (
-    <div
-      className="searchResult"
-      key={props.key}
-      onClick={() => {
-        props.onClick();
-      }}
-    >
-      <h3>{props.title}</h3>
-      {arr}
-    </div>
+    <Card sx={{ mt: 3 }} key={props.key} variant="outlined">
+      <Link
+        overlay
+        onClick={() => {
+          props.onClick();
+        }}
+      />
+      <Stack justifyContent={"space-between"} direction={"row"}>
+        <Typography>{props.fullId}</Typography>
+        <Typography>{props.title}</Typography>
+      </Stack>
+      <Stack direction={"row"} justifyContent={"space-between"}>
+        <Stack>{arr}</Stack>
+        <Stack>
+          <Typography level="body3">{props.instructor}</Typography>
+        </Stack>
+      </Stack>
+    </Card>
   );
 };
 
 const SearchBox = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const results = useData(searchTerm);
+  const curClasses = useSelector((state) => state.slice.curClasses);
+  const curArr = [];
+
+  for (let cl of curClasses) {
+    const fullId = `${cl.subject} ${cl.cid} ${cl.section}`;
+    const onClickFunc = () => {
+      dispatch(removeClassFromSchedule(cl));
+    };
+    const result = (
+      <Chip variant="soft" onClick={() => onClickFunc()}>
+        {fullId}
+      </Chip>
+    );
+    curArr.push(result);
+  }
   const dispatch = useDispatch();
   const arr = [];
   for (let i = 0; i < results.length; i++) {
     const el = results[i];
     const onClickFunc = () => {
       dispatch(addClassToSchedule(el));
-      let curClasses = JSON.parse(localStorage.getItem("curClasses"));
-      if (curClasses == null) {
-        curClasses = [];
-      }
-      curClasses.push(el);
-      localStorage.setItem("curClasses", JSON.stringify(curClasses));
     };
     const result = (
       <SearchResult
-        title={`${el.subject} ${el.cid} ${el.section}`}
+        fullId={`${el.subject} ${el.cid} ${el.section}`}
+        title={el.title}
         onClick={() => onClickFunc()}
         times={el.times}
+        instructor={el.instructors
+          .split(", ")
+          .map((el) => (el = el.trim()))
+          .reverse()
+          .join(" ")}
       />
     );
     arr.push(result);
   }
   return (
     <>
+      <Stack direction={"row"} flexWrap={true} spacing={1}>
+        {curArr}
+      </Stack>
       <Input
+        startDecorator={<Search />}
         value={searchTerm}
         tabIndex={props.expanded ? 0 : -1}
         onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search for a class"
+        sx={{ mt: 1, width: "600px", maxWidth: "80vw" }}
       />
-      <div className="curClasses"></div>
-      <div className="results">{arr}</div>
+
+      <Stack direction={"column"} sx={{ overflowY: "scroll" }}>
+        {arr}
+      </Stack>
     </>
   );
 };

@@ -7,10 +7,13 @@ import Modal from "@mui/joy/Modal";
 import ModalDialog from "@mui/joy/ModalDialog";
 import ModalClose from "@mui/joy/ModalClose";
 import Typography from "@mui/joy/Typography";
+import Box from "@mui/joy/Box";
+import Export from "./Export";
+import CRN from "./CRN";
 
 const Dialog = () => {
   const expanded = useSelector((state) => state.slice.showDialog);
-  const dialogContentTxt = useSelector((state) => state.slice.dialgContent);
+  const dialogContentTxt = useSelector((state) => state.slice.dialogContent);
   const dispatch = useDispatch();
   let dialogContent;
   switch (dialogContentTxt) {
@@ -19,6 +22,12 @@ const Dialog = () => {
       break;
     case "Menu":
       dialogContent = <Menu />;
+      break;
+    case "Export":
+      dialogContent = <Export />;
+      break;
+    case "CRN":
+      dialogContent = <CRN />;
       break;
     default:
       dialogContent = "";
@@ -31,9 +40,13 @@ const Dialog = () => {
         dispatch(changeDialogState());
       }}
     >
-      <ModalDialog>
+      <ModalDialog size="lg">
         <ModalClose />
-        <Typography>{dialogContentTxt}</Typography>
+        <Box sx={{ mb: 3 }}>
+          <Typography sx={{ userSelect: "none" }} level="h3">
+            {dialogContentTxt}
+          </Typography>
+        </Box>
         {dialogContent}
       </ModalDialog>
     </Modal>

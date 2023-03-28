@@ -1,3 +1,4 @@
+import Typography from "@mui/joy/Typography";
 import "./Hours.css";
 
 const hourArr = [
@@ -18,7 +19,7 @@ const hourArr = [
 const Hours = () => {
   let key = 0;
   const elArr = hourArr.map((el) => {
-    return <span key={key++}>{el}</span>;
+    return <Typography key={key++}>{el}</Typography>;
   });
   return <div className="hour-list">{elArr}</div>;
 };

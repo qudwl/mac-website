@@ -1,30 +1,57 @@
-import { BoxArrowUp, Moon, Sun } from "react-bootstrap-icons";
-import { useDispatch } from "react-redux";
-import { setDark, changeDialogState } from "../Redux/slice";
+import { BoxArrowUp, CardList, Moon, Sun } from "react-bootstrap-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { useColorScheme } from "@mui/joy/styles";
+import { changeDialogContent, changeDialogState } from "../Redux/slice";
 import Button from "@mui/joy/Button";
+import IconButton from "@mui/joy/IconButton";
 import "./Menu.css";
-import Grid from "@mui/joy/Grid";
+import Stack from "@mui/joy/Stack";
 
 const Menu = (props) => {
+  const { mode, setMode } = useColorScheme();
   const dispatch = useDispatch();
+  const dialogOpen = useSelector((state) => state.slice.showDialog);
+
+  const onClickFunc = (str) => {
+    if (!dialogOpen) {
+      dispatch(changeDialogState());
+    }
+    dispatch(changeDialogContent(str));
+  };
   return (
-    <Grid container spacing={2} direction="column" justifyContent="space-around" ali>
-      <Button onClick={() => { }}>
-        <BoxArrowUp />
+    <Stack
+      direction={props.isHeader ? "row" : "column"}
+      justifyContent="center"
+      alignItems="stretch"
+      spacing={1}
+    >
+      <Button
+        onClick={() => onClickFunc("Export")}
+        variant="soft"
+        color="neutral"
+        startDecorator={<BoxArrowUp />}
+      >
         <span>Export</span>
       </Button>
-      <Button onClick={() => { }}>CRN</Button>
       <Button
-        onClick={() => {
-          dispatch(setDark());
-        }}
+        variant="soft"
+        color="neutral"
+        startDecorator={<CardList />}
+        onClick={() => onClickFunc("CRN")}
       >
-        {props.dark ? <Moon /> : <Sun />}
+        CRN
       </Button>
-      <Button>
+      <IconButton
+        variant="soft"
+        color="neutral"
+        onClick={() => setMode(mode === "dark" ? "light" : "dark")}
+      >
+        {mode === "dark" ? <Moon /> : <Sun />}
+      </IconButton>
+      <Button variant="soft" color="neutral">
         <span>Settings</span>
       </Button>
-    </Grid>
+    </Stack>
   );
 };
 
