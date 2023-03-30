@@ -1098,6 +1098,7 @@ export const slice = createSlice({
     showDialog: false,
     dialogContent: "",
     dark: false,
+    searchTerm: "",
   },
   reducers: {
     addClassToSchedule: (state, action) => {
@@ -1153,6 +1154,9 @@ export const slice = createSlice({
     setDark: (state) => {
       state.dark = !state.dark;
     },
+    changeSearchTerm: (state, action) => {
+      state.searchTerm = action.payload.toUpperCase();
+    },
   },
 });
 
@@ -1162,6 +1166,7 @@ export const {
   changeDialogState,
   changeDialogContent,
   setDark,
+  changeSearchTerm,
 } = slice.actions;
 
 export default slice.reducer;

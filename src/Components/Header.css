@@ -4,24 +4,6 @@
   text-align: center;
 }
 
-header {
-  transition: background-color 0.25s;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0px;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  width: 500px;
-  margin-left: calc(50vw - 250px);
-  max-width: 90vw;
-}
-
-header > svg {
-  padding: 5px;
-}
-
 .results {
   width: 100%;
   display: flex;
@@ -36,10 +18,6 @@ header > svg {
 }
 
 @media screen and (max-width: 768px) {
-  header {
-    width: 100vw;
-  }
-
   header > button:first-of-type {
     background-color: #232323;
     color: white;

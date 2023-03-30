@@ -1,17 +1,31 @@
 import Days from "./Days";
 import Hours from "./Hours";
 import Schedule from "./Schedule";
-import "./Main.css";
+import Box from "@mui/joy/Box";
 
 const Main = () => {
   return (
-    <main>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <Days />
-      <div>
+      <Box
+        sx={{
+          display: "flex",
+          width: "1080px",
+          justifyContent: "flex-start",
+          alignItems: "center",
+        }}
+      >
         <Hours />
         <Schedule />
-      </div>
-    </main>
+      </Box>
+    </Box>
   );
 };
 

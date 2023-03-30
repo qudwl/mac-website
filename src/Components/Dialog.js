@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
 import { changeDialogState } from "../Redux/slice";
-import "./Dialog.css";
 import SearchBox from "./SearchBox";
 import Menu from "./Menu";
 import Modal from "@mui/joy/Modal";

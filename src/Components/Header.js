@@ -9,6 +9,7 @@ import Box from "@mui/joy/Box";
 import Menu from "./Menu";
 import { useEffect, useState } from "react";
 import { Stack } from "@mui/joy";
+import SearchBar from "./SearchBar";
 
 function getWidth() {
   const { innerWidth: width } = window;
@@ -49,8 +50,9 @@ const Header = () => {
     <Box
       sx={[
         {
-          p: 2,
+          paddingY: 2,
           gap: 2,
+          boxSizing: "border-box",
           bgcolor: "background.surface",
           display: "flex",
           flexDirection: "row",
@@ -67,14 +69,18 @@ const Header = () => {
     >
       <Stack
         direction={"row"}
-        justifyContent="space-between"
-        sx={{ width: "100%", maxWidth: "1080px" }}
+        justifyContent="space-around"
+        sx={{ width: "1080px", maxWidth: "100%", boxSizing: "border-box" }}
         alignItems="center"
       >
         <Logo width="40" />
-        <Button variant="solid" onClick={() => onClickFunc("Search")}>
-          Search
-        </Button>
+        {width > 1080 ? (
+          <SearchBar />
+        ) : (
+          <Button variant="solid" onClick={() => onClickFunc("Search")}>
+            Search
+          </Button>
+        )}
         {width > 1080 ? (
           <Menu isHeader={true} />
         ) : (

@@ -2,8 +2,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100%;
   display: flex;
+  max-width: 100%;
   justify-content: center;
   align-items: center;
 }

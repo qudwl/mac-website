@@ -4,7 +4,6 @@ import { useColorScheme } from "@mui/joy/styles";
 import { changeDialogContent, changeDialogState } from "../Redux/slice";
 import Button from "@mui/joy/Button";
 import IconButton from "@mui/joy/IconButton";
-import "./Menu.css";
 import Stack from "@mui/joy/Stack";
 
 const Menu = (props) => {
