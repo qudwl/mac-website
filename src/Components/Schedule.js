@@ -1,7 +1,6 @@
 import { Box } from "@mui/joy";
 import { useSelector } from "react-redux";
 import CCard from "./CCard";
-import "./Schedule.css";
 
 const colors = [
   "#FFBE0B",
@@ -30,14 +29,19 @@ const Schedule = (props) => {
     );
     arr.push(card);
   }
-  return <Box sx={{
-    width: "1080px",
-    height: "720px",
-    marginTop: "30px",
-    display: "block",
-    position: "relative"
-
-  }}>{arr}</Box>;
+  return (
+    <Box
+      sx={{
+        width: "1080px",
+        height: "720px",
+        marginTop: "30px",
+        display: "block",
+        position: "relative",
+      }}
+    >
+      {arr}
+    </Box>
+  );
 };
 
 export default Schedule;
