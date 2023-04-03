@@ -13,7 +13,7 @@ const Menu = (props) => {
 
   const onClickFunc = (str) => {
     if (!dialogOpen) {
-      dispatch(changeDialogState());
+      dispatch(changeDialogState(true));
     }
     dispatch(changeDialogContent(str));
   };

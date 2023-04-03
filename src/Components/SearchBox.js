@@ -9,15 +9,27 @@ import Input from "@mui/joy/Input";
 import Chip from "@mui/joy/Chip";
 import Stack from "@mui/joy/Stack";
 import SearchResult from "./SearchResult";
-import { useData } from "../Scripts/script";
-import { useRef, useEffect } from "react";
+import { searchData } from "../Scripts/script";
+import { useRef, useEffect, useState } from "react";
+import CircularProgress from "@mui/joy/CircularProgress";
+import Box from "@mui/joy/Box";
 
 const SearchBox = (props) => {
   const inputReference = useRef(null);
+  const [results, setResults] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
   const searchTerm = useSelector((state) => state.slice.searchTerm);
-  const results = useData(searchTerm);
   const curClasses = useSelector((state) => state.slice.curClasses);
+  const curTerm = useSelector((state) => state.slice.curTerm);
   const curArr = [];
+
+  useEffect(() => {
+    setIsSearching(true);
+    searchData(searchTerm, curTerm.termId).then((res) => {
+      setResults(res);
+      setIsSearching(false);
+    });
+  }, [searchTerm, curTerm]);
 
   for (let cl of curClasses) {
     const fullId = `${cl.subject} ${cl.cid} ${cl.section}`;
@@ -73,7 +85,20 @@ const SearchBox = (props) => {
       />
 
       <Stack direction={"column"} sx={{ overflowY: "scroll" }}>
-        {arr}
+        {isSearching ? (
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              p: 2,
+            }}
+          >
+            <CircularProgress size="lg" />
+          </Box>
+        ) : (
+          arr
+        )}
       </Stack>
     </>
   );

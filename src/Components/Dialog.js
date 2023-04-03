@@ -9,6 +9,7 @@ import Typography from "@mui/joy/Typography";
 import Box from "@mui/joy/Box";
 import Export from "./Export";
 import CRN from "./CRN";
+import DataLoading from "./DataLoading";
 
 const Dialog = () => {
   const expanded = useSelector((state) => state.slice.showDialog);
@@ -28,6 +29,9 @@ const Dialog = () => {
     case "CRN":
       dialogContent = <CRN />;
       break;
+    case "Loading Data":
+      dialogContent = <DataLoading />;
+      break;
     default:
       dialogContent = "";
       break;
@@ -36,7 +40,7 @@ const Dialog = () => {
     <Modal
       open={expanded}
       onClose={() => {
-        dispatch(changeDialogState());
+        dispatch(changeDialogState(false));
       }}
     >
       <ModalDialog size="lg">

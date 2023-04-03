@@ -4,8 +4,15 @@ import Header from "./Components/Header";
 import Main from "./Components/Main";
 import Dialog from "./Components/Dialog";
 import { useSelector, useDispatch } from "react-redux";
-import { addClassToSchedule } from "./Redux/slice";
+import {
+  addClassToSchedule,
+  changeDialogContent,
+  changeDialogState,
+  setTerm,
+} from "./Redux/slice";
 import Sheet from "@mui/joy/Sheet";
+import { getTerm } from "./Scripts/api-connector";
+import { downloadTerm } from "./Scripts/script";
 
 function App() {
   const dark = useSelector((state) => state.slice.dark);
@@ -17,6 +24,20 @@ function App() {
       for (let cl of curClasses) {
         dispatch(addClassToSchedule(cl));
       }
+    }
+
+    const curTerm = localStorage.getItem("curTerm");
+    if (curTerm == null) {
+      dispatch(changeDialogState(true));
+      dispatch(changeDialogContent("Loading Data"));
+      getTerm().then((res) => {
+        localStorage.setItem("curTerm", JSON.stringify(res));
+        dispatch(setTerm(res));
+        downloadTerm(res.termId);
+      });
+    } else {
+      const term = localStorage.getItem("curTerm");
+      dispatch(setTerm(JSON.parse(term)));
     }
   }, []);
   dark
