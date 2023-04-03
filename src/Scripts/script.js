@@ -13,7 +13,7 @@ const hasAlpha = (myString) => {
 
 const searchData = async (text, termId) => {
   const searchTerm = text.toUpperCase().split(" ").join("");
-  if (searchTerm.length < 3) {
+  if (searchTerm.length < 3 || searchTerm.length > 9) {
     return [];
   }
   const results = [];
@@ -30,6 +30,21 @@ const searchData = async (text, termId) => {
   } else if (!hasAlpha(searchTerm)) {
     range = IDBKeyRange.only(searchTerm);
     index = store.index("cid");
+  } else {
+    if (searchTerm.length == 3) {
+      return [];
+    } else if (searchTerm.length == 4) {
+      range = IDBKeyRange.bound([searchTerm.slice(0, 3), searchTerm.slice(3) + "00"], [searchTerm.slice(0, 3), searchTerm.slice(3) + "99"]);
+      console.log(`${searchTerm.slice(3)}00`);
+    } else if (searchTerm.length == 5) {
+      range = IDBKeyRange.bound([searchTerm.slice(0, 3), searchTerm.slice(3) + "0"], [searchTerm.slice(0, 3), searchTerm.slice(3) + "9"]);
+      console.log(`${searchTerm.slice(3)}0`);
+    } else {
+      range = IDBKeyRange.only([searchTerm.slice(0, 3), searchTerm.slice(3)]);
+      console.log(searchTerm.slice(3));
+    }
+    
+    index = store.index("searchTerm");
   }
 
   const data = await index.getAll(range);
@@ -50,7 +65,7 @@ const createDB = async (termId) => {
       term.createIndex("subject", "subject");
       term.createIndex("cid", "cid");
       term.createIndex("section", "section");
-      term.createIndex("searchTerm", ["subject", "cid", "section"]);
+      term.createIndex("searchTerm", ["subject", "cid"]);
     },
   });
   return db;
