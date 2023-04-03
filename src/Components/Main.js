@@ -19,7 +19,7 @@ const Main = () => {
           display: "flex",
           width: "1080px",
           justifyContent: "flex-start",
-          alignItems: "center",
+          alignItems: "flex-start",
         }}
       >
         <Hours />

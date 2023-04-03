@@ -39,10 +39,10 @@ const Header = () => {
   const onClickFunc = (str) => {
     if (showingDialog) {
       if (str == curDialog) {
-        dispatch(changeDialogState());
+        dispatch(changeDialogState(false));
       }
     } else {
-      dispatch(changeDialogState());
+      dispatch(changeDialogState(true));
     }
     dispatch(changeDialogContent(str));
   };
