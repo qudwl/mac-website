@@ -1,5 +1,4 @@
 import Logo from "./Logo";
-import "./Header.css";
 import { changeDialogState, changeDialogContent } from "../Redux/slice";
 import { List } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -61,7 +60,8 @@ const Header = () => {
           gridColumn: "1 / -1",
           borderBottom: "1px solid",
           borderColor: "divider",
-          position: "sticky",
+          position: "fixed",
+          width: "100%",
           top: 0,
           zIndex: 1100,
         },

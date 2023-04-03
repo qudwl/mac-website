@@ -1,4 +1,3 @@
-import "./Card.css";
 import { useDispatch } from "react-redux";
 import { removeClassFromSchedule } from "../Redux/slice";
 import Card from "@mui/joy/Card";
@@ -10,8 +9,8 @@ import { useColorScheme } from "@mui/joy";
 
 const getHeight = (start, end) => {
   let height = 0;
-  const st = start.map(el => parseInt(el));
-  const ed = end.map(el => parseInt(el));
+  const st = start.map((el) => parseInt(el));
+  const ed = end.map((el) => parseInt(el));
   if (st[1] > ed[1]) {
     st[0]--;
     st[1] += 60;
@@ -25,7 +24,7 @@ const getHeight = (start, end) => {
 };
 
 const getTop = (start) => {
-  const st = start.map(el => parseInt(el));
+  const st = start.map((el) => parseInt(el));
   let top = 0;
   top += (st[0] - 8) * 60;
   top += st[1];
@@ -77,12 +76,12 @@ const CCard = (props) => {
         <CardContent>
           <Stack justifyContent={"center"} alignItems={"center"}>
             <Typography>{fullId}</Typography>
-            {height > 50 && <Typography level="body3">
-              {time.start.join(":") + "-" + time.end.join(":")}
-            </Typography>}
-            {height > 75 && (
-              <Typography noWrap>{props.instructor}</Typography>
+            {height > 50 && (
+              <Typography level="body3">
+                {time.start.join(":") + "-" + time.end.join(":")}
+              </Typography>
             )}
+            {height > 75 && <Typography noWrap>{props.instructor}</Typography>}
             <Link
               overlay
               onClick={() => {

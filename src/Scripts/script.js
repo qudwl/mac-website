@@ -3,10 +3,20 @@ import { getTermData } from "./api-connector";
 import { changeDialogState } from "../Redux/slice";
 import store from "../store";
 
+/**
+ * Check if a string has a number
+ * @param {string} myString
+ * @returns boolean. True if string has a number, false otherwise
+ */
 const hasNumber = (myString) => {
   return /\d/.test(myString);
 };
 
+/**
+ * Check if a string has an alphabet letter
+ * @param {string} myString
+ * @returns boolean. True if string has a letter, false otherwise
+ */
 const hasAlpha = (myString) => {
   return /[a-zA-Z]/.test(myString);
 };
@@ -34,16 +44,22 @@ const searchData = async (text, termId) => {
     if (searchTerm.length == 3) {
       return [];
     } else if (searchTerm.length == 4) {
-      range = IDBKeyRange.bound([searchTerm.slice(0, 3), searchTerm.slice(3) + "00"], [searchTerm.slice(0, 3), searchTerm.slice(3) + "99"]);
+      range = IDBKeyRange.bound(
+        [searchTerm.slice(0, 3), searchTerm.slice(3) + "00"],
+        [searchTerm.slice(0, 3), searchTerm.slice(3) + "99"]
+      );
       console.log(`${searchTerm.slice(3)}00`);
     } else if (searchTerm.length == 5) {
-      range = IDBKeyRange.bound([searchTerm.slice(0, 3), searchTerm.slice(3) + "0"], [searchTerm.slice(0, 3), searchTerm.slice(3) + "9"]);
+      range = IDBKeyRange.bound(
+        [searchTerm.slice(0, 3), searchTerm.slice(3) + "0"],
+        [searchTerm.slice(0, 3), searchTerm.slice(3) + "9"]
+      );
       console.log(`${searchTerm.slice(3)}0`);
     } else {
       range = IDBKeyRange.only([searchTerm.slice(0, 3), searchTerm.slice(3)]);
       console.log(searchTerm.slice(3));
     }
-    
+
     index = store.index("searchTerm");
   }
 
@@ -58,6 +74,11 @@ const searchData = async (text, termId) => {
   return results;
 };
 
+/**
+ * Create / Open a database and return the database object.
+ * @param {string} termId
+ * @returns db. The database object.
+ */
 const createDB = async (termId) => {
   const db = await openDB("courselist", 1, {
     upgrade(db) {
@@ -71,6 +92,12 @@ const createDB = async (termId) => {
   return db;
 };
 
+/**
+ * Fill the database with the courses from the term.
+ * @param {string} termId
+ * @param {Array} courses
+ * @returns
+ */
 const fillDB = async (termId, courses) => {
   const db = await createDB(termId);
 
@@ -138,6 +165,10 @@ const fillDB = async (termId, courses) => {
   return tx.complete;
 };
 
+/**
+ * Starter function to download a term.
+ * @param {string} termId
+ */
 const downloadTerm = async (termId) => {
   getTermData(termId).then((data) => {
     store.dispatch(changeDialogState());
