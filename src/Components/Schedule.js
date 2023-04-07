@@ -20,7 +20,7 @@ const Schedule = (props) => {
       <CCard
         color={colors[key % colors.length]}
         times={cl.times}
-        key={key++}
+        dataKey={key++}
         subject={cl.subject}
         cid={cl.cid}
         section={cl.section}
@@ -28,6 +28,22 @@ const Schedule = (props) => {
       />
     );
     arr.push(card);
+  }
+
+  const dividers = [];
+
+  for (let i = 0; i < 11; i++) {
+    dividers.push(
+      <Box
+        sx={{
+          position: "absolute",
+          top: `${i * 60}px`,
+          width: "100%",
+          height: "1px",
+          backgroundColor: "rgba(0,0,0,0.1)",
+        }}
+      />
+    );
   }
   return (
     <Box
@@ -40,6 +56,7 @@ const Schedule = (props) => {
       }}
     >
       {arr}
+      {dividers}
     </Box>
   );
 };
