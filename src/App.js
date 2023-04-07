@@ -9,9 +9,10 @@ import {
   changeDialogContent,
   changeDialogState,
   setTerm,
+  setSemesters,
 } from "./Redux/slice";
 import Sheet from "@mui/joy/Sheet";
-import { getTerm } from "./Scripts/api-connector";
+import { getTerms } from "./Scripts/api-connector";
 import { downloadTerm } from "./Scripts/script";
 
 function App() {
@@ -26,19 +27,18 @@ function App() {
       }
     }
 
-    const curTerm = localStorage.getItem("curTerm");
-    if (curTerm == null) {
-      dispatch(changeDialogState(true));
-      dispatch(changeDialogContent("Loading Data"));
-      getTerm().then((res) => {
-        localStorage.setItem("curTerm", JSON.stringify(res));
-        dispatch(setTerm(res));
+    getTerms().then((res) => {
+      dispatch(setSemesters(res));
+      const curTerm = localStorage.getItem("curTerm");
+      if (curTerm == null) {
+        const cur = res.findLast((t) => t.termId % 10 == 0);
+        localStorage.setItem("curTerm", JSON.stringify(cur));
+        dispatch(setTerm(cur));
         downloadTerm(res.termId);
-      });
-    } else {
-      const term = localStorage.getItem("curTerm");
-      dispatch(setTerm(JSON.parse(term)));
-    }
+      } else {
+        dispatch(setTerm(JSON.parse(curTerm)));
+      }
+    });
   }, []);
   dark
     ? document.querySelector("#root").classList.add("dark")

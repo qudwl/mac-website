@@ -5,27 +5,13 @@ const termAPI = "academicTerm/v2?numOfFutureTerms=2&numOfPastTerms=2"; // API to
 const curCourses =
   "courseSection/v3/courseSection?campusCode=O&limit=200&termCode="; // API to get Courses
 
-const getTerm = async () => {
+const getTerms = async () => {
   // Get Current Term
   const termData = await fetch(url + termAPI);
   // Convert to JSON
   const termJson = await termData.json();
-  let curTerm = null;
 
-  // Get the latest term that is divisible by 10 (i.e. Fall / Spring)
-  for (let term of termJson.data) {
-    if (parseInt(term.termId) % 10 == 0) {
-      curTerm = term;
-    }
-  }
-
-  // Format the term name
-  curTerm.name =
-    curTerm.name.split(" ")[0] +
-    " " +
-    parseInt(curTerm.name.split(" ")[2].split("-")[1]);
-
-  return curTerm;
+  return [...termJson.data];
 };
 
 const getTermData = async (term) => {
@@ -56,4 +42,4 @@ const getTermData = async (term) => {
   }
 };
 
-export { getTerm, getTermData };
+export { getTerms, getTermData };

@@ -10,6 +10,7 @@ export const slice = createSlice({
     dark: false,
     searchTerm: "",
     curTerm: "",
+    semesters: [],
   },
   reducers: {
     addClassToSchedule: (state, action) => {
@@ -74,6 +75,9 @@ export const slice = createSlice({
     setHasData: (state, action) => {
       state.hasData = action.payload;
     },
+    setSemesters: (state, action) => {
+      state.semesters = action.payload;
+    },
   },
 });
 
@@ -86,6 +90,7 @@ export const {
   changeSearchTerm,
   setTerm,
   setHasData,
+  setSemesters,
 } = slice.actions;
 
 export default slice.reducer;
