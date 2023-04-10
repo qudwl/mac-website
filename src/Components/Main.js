@@ -3,6 +3,7 @@ import Hours from "./Hours";
 import Schedule from "./Schedule";
 import Box from "@mui/joy/Box";
 import { useState, useEffect } from "react";
+import ScheduleSwitch from "./ScheduleSwitch";
 
 function getWidth() {
   const { innerWidth: width } = window;
@@ -38,6 +39,7 @@ const Main = () => {
         position: "absolute",
       }}
     >
+      <ScheduleSwitch />
       <Days />
       <Box
         sx={{

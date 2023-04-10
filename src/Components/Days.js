@@ -5,9 +5,15 @@ import { useSelector } from "react-redux";
 
 const Days = () => {
   const term = useSelector((state) => state.slice.curTerm);
+  const termNameArr = term.name.split(" ");
   return (
     <div className="days">
-      <Typography>{term.name}</Typography>
+      <Typography>
+        {term &&
+          `${termNameArr[0]} ${termNameArr[2].substring(
+            termNameArr[2].length - 2
+          )}`}
+      </Typography>
       <Typography>Monday</Typography>
       <Typography>Tuesday</Typography>
       <Typography>Wednesday</Typography>

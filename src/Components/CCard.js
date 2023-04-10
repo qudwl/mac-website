@@ -59,13 +59,14 @@ const CCard = (props) => {
       boxSizing: "border-box",
       position: "absolute",
       margin: "0px 5px",
+      zIndex: 2,
     };
     const el = (
       <Card
         style={style}
         tabIndex={0}
-        key={props.key}
-        variant="soft"
+        datakey={props.dataKey}
+        variant="solid"
         sx={{
           "&:hover": {
             boxShadow: "md",

@@ -50,7 +50,7 @@ const Schedule = (props) => {
       sx={{
         width: "1080px",
         height: "720px",
-        marginTop: "30px",
+        marginTop: "40px",
         display: "block",
         position: "relative",
       }}

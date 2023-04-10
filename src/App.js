@@ -40,9 +40,6 @@ function App() {
       }
     });
   }, []);
-  dark
-    ? document.querySelector("#root").classList.add("dark")
-    : document.querySelector("#root").classList.remove("dark");
 
   return (
     <Sheet sx={{ width: "100vw" }}>
