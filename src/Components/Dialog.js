@@ -10,6 +10,7 @@ import Box from "@mui/joy/Box";
 import Export from "./Export";
 import CRN from "./CRN";
 import DataLoading from "./DataLoading";
+import Settings from "./Settings";
 
 const Dialog = () => {
   const expanded = useSelector((state) => state.slice.showDialog);
@@ -31,6 +32,9 @@ const Dialog = () => {
       break;
     case "Loading Data":
       dialogContent = <DataLoading />;
+      break;
+    case "Settings":
+      dialogContent = <Settings />;
       break;
     default:
       dialogContent = "";

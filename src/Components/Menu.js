@@ -47,7 +47,11 @@ const Menu = (props) => {
       >
         {mode === "dark" ? <Moon /> : <Sun />}
       </IconButton>
-      <Button variant="soft" color="neutral">
+      <Button
+        variant="soft"
+        color="neutral"
+        onClick={() => onClickFunc("Settings")}
+      >
         <span>Settings</span>
       </Button>
     </Stack>
