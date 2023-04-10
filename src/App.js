@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { useEffect } from "react";
 import Header from "./Components/Header";
 import Main from "./Components/Main";

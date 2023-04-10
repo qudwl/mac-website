@@ -61,7 +61,7 @@ const Header = () => {
           borderBottom: "1px solid",
           borderColor: "divider",
           position: "fixed",
-          width: "100%",
+          width: "100vw",
           top: 0,
           zIndex: 1100,
         },
