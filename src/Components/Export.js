@@ -14,7 +14,7 @@ const Export = () => {
 
   // PDF Download Function.
   const pdfDownload = async () => {
-    const element = document.querySelector("main");
+    const element = document.querySelector("#schedule");
     const canvas = await html2canvas(element, {
       backgroundColor: mode === "light" ? "#fff" : "#000",
     });

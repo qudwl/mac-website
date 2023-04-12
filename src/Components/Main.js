@@ -29,6 +29,7 @@ const Main = () => {
   const width = useWidth();
   return (
     <Sheet
+      id="schedule"
       sx={{
         display: "flex",
         flexDirection: "column",
