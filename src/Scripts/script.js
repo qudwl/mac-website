@@ -34,6 +34,9 @@ const searchData = async (text, termId) => {
   const results = [];
 
   let apiResults;
+  const db = await openDB("courselist", 1);
+  const tx = db.transaction(termId, "readwrite");
+  const store = tx.objectStore(termId);
 
   if (searchTerm.length === 3 && hasNumber(searchTerm)) {
     apiResults = await getDeptData(termId, searchTerm);
@@ -43,16 +46,13 @@ const searchData = async (text, termId) => {
     const courseData = formatCourse(cl);
     if (courseData.subject != null) {
       results.push(courseData);
+      store.put(courseData);
     }
   }
 
   if (results.length > 0) {
     return results;
   }
-
-  const db = await openDB("courselist", 1);
-  const tx = db.transaction(termId, "readonly");
-  const store = tx.objectStore(termId);
 
   let range;
   let index;
