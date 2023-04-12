@@ -33,7 +33,11 @@ const searchData = async (text, termId) => {
   }
   const results = [];
 
-  const apiResults = await getDeptData(termId, searchTerm);
+  let apiResults;
+
+  if (searchTerm.length === 3 && hasNumber(searchTerm)) {
+    apiResults = await getDeptData(termId, searchTerm);
+  }
 
   for (let cl of apiResults) {
     const courseData = formatCourse(cl);
