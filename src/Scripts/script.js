@@ -1,6 +1,11 @@
-import { openDB } from "idb";
-import { getTermData } from "./api-connector";
-import { changeDialogState } from "../Redux/slice";
+import { deleteDB, openDB } from "idb";
+import { getTermData, getTerms } from "./api-connector";
+import {
+  addClassToSchedule,
+  changeDialogState,
+  setSemesters,
+  setTerm,
+} from "../Redux/slice";
 import store from "../store";
 
 /**
@@ -86,6 +91,7 @@ const createDB = async (termId) => {
       term.createIndex("subject", "subject");
       term.createIndex("cid", "cid");
       term.createIndex("section", "section");
+      term.createIndex("times", "times", { multiEntry: true });
       term.createIndex("searchTerm", ["subject", "cid"]);
     },
   });
@@ -101,8 +107,8 @@ const createDB = async (termId) => {
 const fillDB = async (termId, courses) => {
   const db = await createDB(termId);
 
-  const tx = db.transaction(termId, "readwrite");
-  const store = tx.objectStore(termId);
+  const tx = await db.transaction(termId, "readwrite");
+  const store = await tx.objectStore(termId);
 
   for (let course of courses) {
     if (!course.isDisplayed) {
@@ -170,9 +176,87 @@ const fillDB = async (termId, courses) => {
  * @param {string} termId
  */
 const downloadTerm = async (termId) => {
-  getTermData(termId).then((data) => {
-    store.dispatch(changeDialogState());
+  getTermData(termId);
+};
+
+const deleteAllData = async () => {
+  await deleteDB("courselist");
+  localStorage.clear();
+  return true;
+};
+
+const initApp = async () => {
+  const dispatch = store.dispatch;
+  const curClassesLocal = localStorage.getItem("curClasses");
+  if (curClassesLocal != null) {
+    const curClasses = JSON.parse(curClassesLocal);
+    for (let cl of curClasses) {
+      dispatch(addClassToSchedule(cl));
+    }
+  }
+
+  const curTerm = localStorage.getItem("curTerm");
+
+  if (localStorage.getItem("curTerm") != null) {
+    const cur = JSON.parse(curTerm);
+    dispatch(setTerm(cur));
+    console.log("Current term:", cur);
+    await createDB(cur.termId);
+  }
+
+  getTerms().then((res) => {
+    dispatch(setSemesters(res));
+
+    if (curTerm == null) {
+      const cur = res.findLast((t) => t.termId % 10 === 0);
+      localStorage.setItem("curTerm", JSON.stringify(cur));
+      createDB(cur.termId).then((db) => {
+        console.log(db);
+        dispatch(setTerm(cur));
+        downloadTerm(cur.termId);
+      });
+    }
   });
 };
 
-export { searchData, createDB, fillDB, downloadTerm };
+const classSectionCombine = async (term, classes) => {
+  const db = await openDB("courselist", 1);
+  const tx = db.transaction(term, "readonly");
+  const store = tx.objectStore(term);
+  const index = store.index("searchTerm");
+  const classesArr = [];
+
+  for (let cl of classes) {
+    const key = [cl.subject, cl.cid];
+    const range = IDBKeyRange.only(key);
+    const data = await index.getAll(range);
+    const obj = {
+      name: cl.subject + cl.cid,
+      sections: [
+        ...data.map((d) => {
+          return {
+            section: d.section,
+            times: d.times,
+          };
+        }),
+      ],
+    };
+    classesArr.push(obj);
+  }
+
+  return classesArr;
+};
+
+const possibleSchedules = (classes) => {
+  const schedules = [];
+
+  return schedules;
+};
+
+const scheduleGenerator = async (term, classes) => {
+  const classesArr = await classSectionCombine(term, classes);
+
+  const schedules = [];
+};
+
+export { searchData, createDB, fillDB, downloadTerm, deleteAllData, initApp };

@@ -14,6 +14,34 @@ const getTerms = async () => {
   return [...termJson.data];
 };
 
+const getDeptData = async (term, dept) => {
+  let runIndex = 0;
+  const courses = [];
+  while (true) {
+    // Get the course data from the API
+    const courseData = await fetch(
+      url +
+        curCourses +
+        term +
+        (runIndex == 0 ? "" : "&offset=" + runIndex * 200) +
+        "&compose=%2Cschedules%2Cinstructors%2Cattributes%2CcrossListedCourseSections%2CenrollmentDistribution" +
+        "&course_subjectCode=" +
+        dept
+    );
+    runIndex++;
+    // Convert to JSON
+    const courseJson = await courseData.json();
+    // Add the courses to the array
+    courses.push(...courseJson.data);
+
+    // If the number of courses is less than 200, we have reached the end of the list
+    if (courseJson.data.length < 200) {
+      break;
+    }
+  }
+  return courses;
+};
+
 const getTermData = async (term) => {
   let runIndex = 0;
   while (true) {
@@ -42,4 +70,4 @@ const getTermData = async (term) => {
   }
 };
 
-export { getTerms, getTermData };
+export { getTerms, getTermData, getDeptData };
