@@ -1,5 +1,5 @@
 import { deleteDB, openDB } from "idb";
-import { getTermData, getTerms } from "./api-connector";
+import { getDeptData, getTermData, getTerms } from "./api-connector";
 import {
   addClassToSchedule,
   changeDialogState,
@@ -32,6 +32,19 @@ const searchData = async (text, termId) => {
     return [];
   }
   const results = [];
+
+  const apiResults = await getDeptData(termId, searchTerm);
+
+  for (let cl of apiResults) {
+    const courseData = formatCourse(cl);
+    if (courseData.subject != null) {
+      results.push(courseData);
+    }
+  }
+
+  if (results.length > 0) {
+    return results;
+  }
 
   const db = await openDB("courselist", 1);
   const tx = db.transaction(termId, "readonly");
@@ -98,6 +111,63 @@ const createDB = async (termId) => {
   return db;
 };
 
+const formatCourse = (course) => {
+  if (!course.isDisplayed) {
+    return {};
+  }
+  let instructor = "";
+  for (let prof of course.instructors) {
+    if (prof.isPrimary) {
+      instructor = prof.person.informalDisplayedName;
+      break;
+    }
+  }
+  const times = [];
+  course.schedules.forEach((time) => {
+    if (time.days == null) {
+      return;
+    }
+    for (let day of time.days.split("")) {
+      const timeObj = {
+        start: time.startTime.split(":"),
+        end: time.endTime.split(":"),
+      };
+      switch (day) {
+        case "M":
+          timeObj.day = 0;
+          break;
+        case "T":
+          timeObj.day = 1;
+          break;
+        case "W":
+          timeObj.day = 2;
+          break;
+        case "R":
+          timeObj.day = 3;
+          break;
+        case "F":
+          timeObj.day = 4;
+          break;
+        default:
+          console.log("Error! Not a day:", day);
+          break;
+      }
+      times.push(timeObj);
+    }
+  });
+  const courseData = {
+    subject: course.course.subjectCode,
+    cid: course.course.number,
+    crn: course.crn,
+    title: course.course.title,
+    instructors: instructor,
+    section: course.courseSectionCode,
+    credits: course.course.creditHoursHigh,
+    times: times,
+  };
+  return courseData;
+};
+
 /**
  * Fill the database with the courses from the term.
  * @param {string} termId
@@ -111,61 +181,12 @@ const fillDB = async (termId, courses) => {
   const store = await tx.objectStore(termId);
 
   for (let course of courses) {
-    if (!course.isDisplayed) {
+    const courseData = formatCourse(course);
+    if (courseData.subject == null) {
       continue;
+    } else {
+      store.put(courseData);
     }
-    let instructor = "";
-    for (let prof of course.instructors) {
-      if (prof.isPrimary) {
-        instructor = prof.person.informalDisplayedName;
-        break;
-      }
-    }
-    const times = [];
-    course.schedules.forEach((time) => {
-      if (time.days == null) {
-        return;
-      }
-      for (let day of time.days.split("")) {
-        const timeObj = {
-          start: time.startTime.split(":"),
-          end: time.endTime.split(":"),
-        };
-        switch (day) {
-          case "M":
-            timeObj.day = 0;
-            break;
-          case "T":
-            timeObj.day = 1;
-            break;
-          case "W":
-            timeObj.day = 2;
-            break;
-          case "R":
-            timeObj.day = 3;
-            break;
-          case "F":
-            timeObj.day = 4;
-            break;
-          default:
-            console.log("Error! Not a day:", day);
-            break;
-        }
-        times.push(timeObj);
-      }
-    });
-    const courseData = {
-      subject: course.course.subjectCode,
-      cid: course.course.number,
-      crn: course.crn,
-      title: course.course.title,
-      instructors: instructor,
-      section: course.courseSectionCode,
-      credits: course.course.creditHoursHigh,
-      times: times,
-    };
-
-    store.put(courseData);
   }
 
   return tx.complete;
