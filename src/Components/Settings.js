@@ -69,13 +69,6 @@ const Settings = () => {
         {semArr}
       </Select>
       <Typography>Campus</Typography>
-      <Tabs sx={{ my: 2 }}>
-        <TabList>
-          <Tab>Oxford</Tab>
-          <Tab>Hamilton</Tab>
-          <Tab>Middletown</Tab>
-        </TabList>
-      </Tabs>
       <Button sx={{ my: 1 }} color="primary" startDecorator={<Check />} onClick={applyChanges}>
         Apply
       </Button>
