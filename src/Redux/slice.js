@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const slice = createSlice({
   name: "data",
   initialState: {
-    hasData: true,
+    hasData: false,
     curClasses: [],
     showDialog: false,
     dialogContent: "",
@@ -30,9 +30,9 @@ export const slice = createSlice({
                 ((state.curClasses[tcl].times[tcl2].end[0] ==
                   cl.times[cl2].start[0] &&
                   state.curClasses[tcl].times[tcl2].end[1] >
-                    cl.times[cl2].start[1]) ||
+                  cl.times[cl2].start[1]) ||
                   state.curClasses[tcl].times[tcl2].end[0] >
-                    cl.times[cl2].start[0])
+                  cl.times[cl2].start[0])
               ) {
                 return;
               }
@@ -56,6 +56,9 @@ export const slice = createSlice({
           return;
         }
       }
+    },
+    clearClasses: (state) => {
+      state.curClasses = [];
     },
     changeDialogState: (state, action) => {
       state.showDialog = action.payload;
@@ -91,6 +94,7 @@ export const {
   setTerm,
   setHasData,
   setSemesters,
+  clearClasses
 } = slice.actions;
 
 export default slice.reducer;

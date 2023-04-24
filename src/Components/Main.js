@@ -1,7 +1,7 @@
 import Days from "./Days";
 import Hours from "./Hours";
 import Schedule from "./Schedule";
-import Box from "@mui/joy/Box";
+import Sheet from "@mui/joy/Sheet";
 import { useState, useEffect } from "react";
 import ScheduleSwitch from "./ScheduleSwitch";
 
@@ -28,20 +28,21 @@ function useWidth() {
 const Main = () => {
   const width = useWidth();
   return (
-    <Box
+    <Sheet
+      id="schedule"
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        top: "72px",
         left: (width >= 1080 ? (width - 1080) / 2 : 0) + "px",
         position: "absolute",
+        top: "72px",
       }}
     >
       <ScheduleSwitch />
       <Days />
-      <Box
+      <Sheet
         sx={{
           display: "flex",
           width: "1080px",
@@ -51,8 +52,8 @@ const Main = () => {
       >
         <Hours />
         <Schedule />
-      </Box>
-    </Box>
+      </Sheet>
+    </Sheet>
   );
 };
 

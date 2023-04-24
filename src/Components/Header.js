@@ -7,7 +7,7 @@ import IconButton from "@mui/joy/IconButton";
 import Box from "@mui/joy/Box";
 import Menu from "./Menu";
 import { useEffect, useState } from "react";
-import { Stack } from "@mui/joy";
+import { CircularProgress, Stack } from "@mui/joy";
 import SearchBar from "./SearchBar";
 
 function getWidth() {
@@ -35,6 +35,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const showingDialog = useSelector((state) => state.slice.showDialog);
   const curDialog = useSelector((state) => state.slice.dialogContent);
+  const hasData = useSelector((state) => state.slice.hasData);
   const onClickFunc = (str) => {
     if (showingDialog) {
       if (str == curDialog) {
@@ -61,7 +62,7 @@ const Header = () => {
           borderBottom: "1px solid",
           borderColor: "divider",
           position: "fixed",
-          width: "100%",
+          width: "100vw",
           top: 0,
           zIndex: 1100,
         },
@@ -73,7 +74,7 @@ const Header = () => {
         sx={{ width: "1080px", maxWidth: "100%", boxSizing: "border-box" }}
         alignItems="center"
       >
-        <Logo width="40" />
+        {hasData ? <Logo width="40" /> : <CircularProgress />}
         {width > 1080 ? (
           <SearchBar />
         ) : (
