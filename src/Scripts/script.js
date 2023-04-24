@@ -2,7 +2,8 @@ import { deleteDB, openDB } from "idb";
 import { getDeptData, getTermData, getTerms } from "./api-connector";
 import {
   addClassToSchedule,
-  changeDialogState,
+  clearClasses,
+  setHasData,
   setSemesters,
   setTerm,
 } from "../Redux/slice";
@@ -33,22 +34,10 @@ const searchData = async (text, termId) => {
   }
   const results = [];
 
-  let apiResults;
-  const db = await openDB("courselist", 1);
-  const tx = db.transaction(termId, "readwrite");
+  getDeptData(termId, searchTerm);
+  const db = await openDB("courselist");
+  const tx = db.transaction(termId, "readonly");
   const store = tx.objectStore(termId);
-
-  if (searchTerm.length === 3 && hasNumber(searchTerm)) {
-    apiResults = await getDeptData(termId, searchTerm);
-  }
-
-  for (let cl of apiResults) {
-    const courseData = formatCourse(cl);
-    if (courseData.subject != null) {
-      results.push(courseData);
-      store.put(courseData);
-    }
-  }
 
   if (results.length > 0) {
     return results;
@@ -63,15 +52,15 @@ const searchData = async (text, termId) => {
     range = IDBKeyRange.only(searchTerm);
     index = store.index("cid");
   } else {
-    if (searchTerm.length == 3) {
+    if (searchTerm.length === 3) {
       return [];
-    } else if (searchTerm.length == 4) {
+    } else if (searchTerm.length === 4) {
       range = IDBKeyRange.bound(
         [searchTerm.slice(0, 3), searchTerm.slice(3) + "00"],
         [searchTerm.slice(0, 3), searchTerm.slice(3) + "99"]
       );
       console.log(`${searchTerm.slice(3)}00`);
-    } else if (searchTerm.length == 5) {
+    } else if (searchTerm.length === 5) {
       range = IDBKeyRange.bound(
         [searchTerm.slice(0, 3), searchTerm.slice(3) + "0"],
         [searchTerm.slice(0, 3), searchTerm.slice(3) + "9"]
@@ -89,7 +78,7 @@ const searchData = async (text, termId) => {
 
   for (let cl of data) {
     const title = cl.subject + cl.cid;
-    if (title.toUpperCase().indexOf(searchTerm) != -1) {
+    if (title.toUpperCase().indexOf(searchTerm) !== -1) {
       results.push(cl);
     }
   }
@@ -111,7 +100,25 @@ const createDB = async (termId) => {
       term.createIndex("times", "times", { multiEntry: true });
       term.createIndex("searchTerm", ["subject", "cid"]);
     },
-  });
+  })
+  return db;
+};
+
+const createNewTermDB = async (termId) => {
+  const { version, objectStoreNames } = await openDB("courselist");
+  if (objectStoreNames.contains(termId)) {
+    return await openDB("courselist");
+  }
+  const db = await openDB("courselist", version + 1, {
+    upgrade(db) {
+      const term = db.createObjectStore(termId, { keyPath: "crn" });
+      term.createIndex("subject", "subject");
+      term.createIndex("cid", "cid");
+      term.createIndex("section", "section");
+      term.createIndex("times", "times", { multiEntry: true });
+      term.createIndex("searchTerm", ["subject", "cid"]);
+    },
+  })
   return db;
 };
 
@@ -179,7 +186,7 @@ const formatCourse = (course) => {
  * @returns
  */
 const fillDB = async (termId, courses) => {
-  const db = await createDB(termId);
+  const db = await openDB("courselist");
 
   const tx = await db.transaction(termId, "readwrite");
   const store = await tx.objectStore(termId);
@@ -201,12 +208,19 @@ const fillDB = async (termId, courses) => {
  * @param {string} termId
  */
 const downloadTerm = async (termId) => {
-  getTermData(termId);
+  return await getTermData(termId);
 };
 
 const deleteAllData = async () => {
-  await deleteDB("courselist");
-  localStorage.clear();
+  const dispatch = store.dispatch;
+  deleteDB("courselist").then(() => {
+    localStorage.removeItem("curClasses");
+    localStorage.removeItem("curTerm");
+    dispatch(clearClasses());
+    dispatch(setSemesters([]));
+    dispatch(setTerm([]));
+    window.location.reload();
+  });
   return true;
 };
 
@@ -226,7 +240,7 @@ const initApp = async () => {
     const cur = JSON.parse(curTerm);
     dispatch(setTerm(cur));
     console.log("Current term:", cur);
-    await createDB(cur.termId);
+    await openDB("courselist");
   }
 
   getTerms().then((res) => {
@@ -236,10 +250,13 @@ const initApp = async () => {
       const cur = res.findLast((t) => t.termId % 10 === 0);
       localStorage.setItem("curTerm", JSON.stringify(cur));
       createDB(cur.termId).then((db) => {
-        console.log(db);
         dispatch(setTerm(cur));
-        downloadTerm(cur.termId);
+        downloadTerm(cur.termId).then((res) => {
+          dispatch(setHasData(true));
+        });
       });
+    } else {
+      dispatch(setHasData(true));
     }
   });
 };
@@ -284,4 +301,4 @@ const scheduleGenerator = async (term, classes) => {
   const schedules = [];
 };
 
-export { searchData, createDB, fillDB, downloadTerm, deleteAllData, initApp };
+export { searchData, createDB, fillDB, downloadTerm, deleteAllData, initApp, createNewTermDB };
