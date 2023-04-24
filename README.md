@@ -3,10 +3,10 @@ A web application that allows for Miami University Students to make schedules vi
 
 
 ### Libraries
-React Docs: https://react.dev/\
-Joy UI: https://mui.com/joy-ui/getting-started/overview/\
-IDB (Database): https://github.com/jakearchibald/idb\
-Swagger API (Miami): https://ws.apps.miamioh.edu/api/swagger-ui/\
+React Docs: https://react.dev/  
+Joy UI: https://mui.com/joy-ui/getting-started/overview/  
+IDB (Database): https://github.com/jakearchibald/idb  
+Swagger API (Miami): https://ws.apps.miamioh.edu/api/swagger-ui/  
 
 ### How to Run
 
