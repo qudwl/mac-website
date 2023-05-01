@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mac-website/static/css/main.afd1a752.css",
-    "main.js": "/mac-website/static/js/main.f5784336.js",
+    "main.js": "/mac-website/static/js/main.603b8651.js",
     "static/js/703.58f7ff59.chunk.js": "/mac-website/static/js/703.58f7ff59.chunk.js",
     "static/js/631.0445936c.chunk.js": "/mac-website/static/js/631.0445936c.chunk.js",
     "static/js/787.5b4beeb9.chunk.js": "/mac-website/static/js/787.5b4beeb9.chunk.js",
@@ -19,13 +19,13 @@
     "static/media/public-sans-vietnamese-400-normal.woff2": "/mac-website/static/media/public-sans-vietnamese-400-normal.4490eed5a77c4164de3d.woff2",
     "index.html": "/mac-website/index.html",
     "main.afd1a752.css.map": "/mac-website/static/css/main.afd1a752.css.map",
-    "main.f5784336.js.map": "/mac-website/static/js/main.f5784336.js.map",
+    "main.603b8651.js.map": "/mac-website/static/js/main.603b8651.js.map",
     "703.58f7ff59.chunk.js.map": "/mac-website/static/js/703.58f7ff59.chunk.js.map",
     "631.0445936c.chunk.js.map": "/mac-website/static/js/631.0445936c.chunk.js.map",
     "787.5b4beeb9.chunk.js.map": "/mac-website/static/js/787.5b4beeb9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.afd1a752.css",
-    "static/js/main.f5784336.js"
+    "static/js/main.603b8651.js"
   ]
 }
