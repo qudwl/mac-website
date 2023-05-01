@@ -40,7 +40,6 @@ const Main = () => {
         top: "72px",
       }}
     >
-      <ScheduleSwitch />
       <Days />
       <Sheet
         sx={{

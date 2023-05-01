@@ -27,21 +27,23 @@ const hasAlpha = (myString) => {
   return /[a-zA-Z]/.test(myString);
 };
 
-const searchData = async (text, termId) => {
+const searchData = async (text, termId, hasData) => {
   const searchTerm = text.toUpperCase().split(" ").join("");
   if (searchTerm.length < 3 || searchTerm.length > 9) {
     return [];
   }
+  if (!hasData) {
+    const deptData = await getDeptData(termId, searchTerm);
+    if (deptData != null && deptData != undefined) {
+      return deptData;
+    }
+  }
+
   const results = [];
 
-  getDeptData(termId, searchTerm);
   const db = await openDB("courselist");
   const tx = db.transaction(termId, "readonly");
   const store = tx.objectStore(termId);
-
-  if (results.length > 0) {
-    return results;
-  }
 
   let range;
   let index;
@@ -100,7 +102,7 @@ const createDB = async (termId) => {
       term.createIndex("times", "times", { multiEntry: true });
       term.createIndex("searchTerm", ["subject", "cid"]);
     },
-  })
+  });
   return db;
 };
 
@@ -118,7 +120,7 @@ const createNewTermDB = async (termId) => {
       term.createIndex("times", "times", { multiEntry: true });
       term.createIndex("searchTerm", ["subject", "cid"]);
     },
-  })
+  });
   return db;
 };
 
@@ -247,13 +249,26 @@ const initApp = async () => {
     dispatch(setSemesters(res));
 
     if (curTerm == null) {
-      const cur = res.findLast((t) => t.termId % 10 === 0);
+      const cur = {
+        ...res.findLast((t) => t.termId % 10 === 0),
+        hasData: false,
+      };
       localStorage.setItem("curTerm", JSON.stringify(cur));
       createDB(cur.termId).then((db) => {
         dispatch(setTerm(cur));
         downloadTerm(cur.termId).then((res) => {
           dispatch(setHasData(true));
+          cur.hasData = true;
+          dispatch(setTerm(cur));
+          localStorage.setItem("curTerm", JSON.stringify(cur));
         });
+      });
+    } else if (!curTerm.hasData) {
+      downloadTerm(curTerm.termId).then((res) => {
+        dispatch(setHasData(true));
+        curTerm.hasData = true;
+        dispatch(setTerm(curTerm));
+        localStorage.setItem("curTerm", JSON.stringify(curTerm));
       });
     } else {
       dispatch(setHasData(true));
@@ -301,4 +316,13 @@ const scheduleGenerator = async (term, classes) => {
   const schedules = [];
 };
 
-export { searchData, createDB, fillDB, downloadTerm, deleteAllData, initApp, createNewTermDB };
+export {
+  searchData,
+  createDB,
+  fillDB,
+  downloadTerm,
+  deleteAllData,
+  initApp,
+  createNewTermDB,
+  formatCourse,
+};

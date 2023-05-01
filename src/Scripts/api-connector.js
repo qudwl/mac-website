@@ -1,4 +1,4 @@
-import { fillDB } from "./script";
+import { fillDB, formatCourse } from "./script";
 import store from "../store";
 import { setHasData } from "../Redux/slice";
 
@@ -17,9 +17,9 @@ const getTerms = async () => {
 };
 
 const getDeptData = async (term, dept) => {
+  const courses = [];
   let runIndex = 0;
   while (true) {
-    const courses = [];
     // Get the course data from the API
     const courseData = await fetch(
       url +
@@ -33,16 +33,19 @@ const getDeptData = async (term, dept) => {
     runIndex++;
     // Convert to JSON
     const courseJson = await courseData.json();
-    courses.push(...courseJson.data);
-    console.log(courses.length);
-    // Add the courses to the array
-    fillDB(term, courses);
+    for (let course of courseJson.data) {
+      let formatted = formatCourse(course);
+      if (Object.keys(formatted).length > 0) {
+        courses.push(formatted);
+      }
+    }
 
     // If the number of courses is less than 200, we have reached the end of the list
     if (courseJson.data.length < 200) {
-      return true;
+      break;
     }
   }
+  return courses;
 };
 
 const getTermData = async (term) => {

@@ -20,12 +20,13 @@ const SearchBox = (props) => {
   const [isSearching, setIsSearching] = useState(false);
   const searchTerm = useSelector((state) => state.slice.searchTerm);
   const curClasses = useSelector((state) => state.slice.curClasses);
+  const hasData = useSelector((state) => state.slice.hasData);
   const curTerm = useSelector((state) => state.slice.curTerm);
   const curArr = [];
 
   useEffect(() => {
     setIsSearching(true);
-    searchData(searchTerm, curTerm.termId).then((res) => {
+    searchData(searchTerm, curTerm.termId, hasData).then((res) => {
       setResults(res);
       setIsSearching(false);
     });
@@ -56,11 +57,15 @@ const SearchBox = (props) => {
         title={el.title}
         onClick={() => onClickFunc()}
         times={el.times}
-        instructor={el.instructors
-          .split(", ")
-          .map((el) => (el = el.trim()))
-          .reverse()
-          .join(" ")}
+        instructor={
+          el.instructors
+            ? el.instructors
+                .split(", ")
+                .map((el) => (el = el.trim()))
+                .reverse()
+                .join(" ")
+            : ""
+        }
       />
     );
     arr.push(result);
