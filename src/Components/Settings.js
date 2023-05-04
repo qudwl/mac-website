@@ -68,7 +68,6 @@ const Settings = () => {
       >
         {semArr}
       </Select>
-      <Typography>Campus</Typography>
       <Button sx={{ my: 1 }} color="primary" startDecorator={<Check />} onClick={applyChanges}>
         Apply
       </Button>
