@@ -4,26 +4,7 @@ import Schedule from "./Schedule";
 import Sheet from "@mui/joy/Sheet";
 import { useState, useEffect } from "react";
 import ScheduleSwitch from "./ScheduleSwitch";
-
-function getWidth() {
-  const { innerWidth: width } = window;
-  return width;
-}
-
-function useWidth() {
-  const [width, setWidth] = useState(getWidth());
-
-  useEffect(() => {
-    function handleResize() {
-      setWidth(getWidth());
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return width;
-}
+import { useWidth } from "../Scripts/script";
 
 const Main = () => {
   const width = useWidth();

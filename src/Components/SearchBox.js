@@ -1,21 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
-  addClassToSchedule,
   removeClassFromSchedule,
   changeSearchTerm,
 } from "../Redux/slice";
-import { Search } from "react-bootstrap-icons";
 import Input from "@mui/joy/Input";
 import Chip from "@mui/joy/Chip";
 import Stack from "@mui/joy/Stack";
 import SearchResult from "./SearchResult";
-import { searchData } from "../Scripts/script";
+import { searchData, useWidth } from "../Scripts/script";
 import { useRef, useEffect, useState } from "react";
 import CircularProgress from "@mui/joy/CircularProgress";
 import Box from "@mui/joy/Box";
 
 const SearchBox = (props) => {
-  const inputReference = useRef(null);
   const [results, setResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const searchTerm = useSelector((state) => state.slice.searchTerm);
@@ -48,45 +45,26 @@ const SearchBox = (props) => {
   const arr = [];
   for (let i = 0; i < results.length; i++) {
     const el = results[i];
-    const onClickFunc = () => {
-      dispatch(addClassToSchedule(el));
-    };
     const result = (
       <SearchResult
-        fullId={`${el.subject} ${el.cid} ${el.section}`}
-        title={el.title}
-        onClick={() => onClickFunc()}
-        times={el.times}
-        instructor={
-          el.instructors
-            ? el.instructors
-                .split(", ")
-                .map((el) => (el = el.trim()))
-                .reverse()
-                .join(" ")
-            : ""
-        }
+        el={el}
+        key={i}
       />
     );
     arr.push(result);
   }
-
-  useEffect(() => {
-    inputReference.current.children[1].focus();
-  }, []);
+  const display = useWidth() >= 1480 ? "none" : "block";
   return (
     <>
       <Stack direction={"row"} flexWrap={true} spacing={1}>
         {curArr}
       </Stack>
       <Input
-        ref={inputReference}
-        startDecorator={<Search />}
         value={searchTerm}
         tabIndex={props.expanded ? 0 : -1}
         onChange={(e) => dispatch(changeSearchTerm(e.target.value))}
         placeholder="Search for a class"
-        sx={{ mt: 1, width: "600px", maxWidth: "80vw" }}
+        sx={{ mt: 1, maxWidth: "80vw", display: { display } }}
       />
 
       <Stack direction={"column"} sx={{ overflowY: "scroll" }}>

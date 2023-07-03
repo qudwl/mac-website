@@ -7,6 +7,7 @@ import {
   setSemesters,
   setTerm,
 } from "../Redux/slice";
+import { useState, useEffect } from "react";
 import store from "../store";
 
 /**
@@ -32,59 +33,58 @@ const searchData = async (text, termId, hasData) => {
   if (searchTerm.length < 3 || searchTerm.length > 9) {
     return [];
   }
-  if (!hasData) {
-    const deptData = await getDeptData(termId, searchTerm);
-    if (deptData != null && deptData != undefined) {
-      return deptData;
-    }
+
+  const deptData = await getDeptData(termId, searchTerm);
+  if (deptData != null && deptData != undefined) {
+    fillDB(termId, deptData);
+    return deptData;
   }
+  // const results = [];
 
-  const results = [];
+  // const db = await openDB("courselist");
+  // const tx = db.transaction(termId, "readonly");
+  // const store = tx.objectStore(termId);
 
-  const db = await openDB("courselist");
-  const tx = db.transaction(termId, "readonly");
-  const store = tx.objectStore(termId);
+  // let range;
+  // let index;
+  // if (!hasNumber(searchTerm)) {
+  //   range = IDBKeyRange.only(searchTerm);
+  //   index = store.index("subject");
+  // } else if (!hasAlpha(searchTerm)) {
+  //   range = IDBKeyRange.only(searchTerm);
+  //   index = store.index("cid");
+  // } else {
+  //   if (searchTerm.length === 3) {
+  //     return [];
+  //   } else if (searchTerm.length === 4) {
+  //     range = IDBKeyRange.bound(
+  //       [searchTerm.slice(0, 3), searchTerm.slice(3) + "00"],
+  //       [searchTerm.slice(0, 3), searchTerm.slice(3) + "99"]
+  //     );
+  //     console.log(`${searchTerm.slice(3)}00`);
+  //   } else if (searchTerm.length === 5) {
+  //     range = IDBKeyRange.bound(
+  //       [searchTerm.slice(0, 3), searchTerm.slice(3) + "0"],
+  //       [searchTerm.slice(0, 3), searchTerm.slice(3) + "9"]
+  //     );
+  //     console.log(`${searchTerm.slice(3)}0`);
+  //   } else {
+  //     range = IDBKeyRange.only([searchTerm.slice(0, 3), searchTerm.slice(3)]);
+  //     console.log(searchTerm.slice(3));
+  //   }
 
-  let range;
-  let index;
-  if (!hasNumber(searchTerm)) {
-    range = IDBKeyRange.only(searchTerm);
-    index = store.index("subject");
-  } else if (!hasAlpha(searchTerm)) {
-    range = IDBKeyRange.only(searchTerm);
-    index = store.index("cid");
-  } else {
-    if (searchTerm.length === 3) {
-      return [];
-    } else if (searchTerm.length === 4) {
-      range = IDBKeyRange.bound(
-        [searchTerm.slice(0, 3), searchTerm.slice(3) + "00"],
-        [searchTerm.slice(0, 3), searchTerm.slice(3) + "99"]
-      );
-      console.log(`${searchTerm.slice(3)}00`);
-    } else if (searchTerm.length === 5) {
-      range = IDBKeyRange.bound(
-        [searchTerm.slice(0, 3), searchTerm.slice(3) + "0"],
-        [searchTerm.slice(0, 3), searchTerm.slice(3) + "9"]
-      );
-      console.log(`${searchTerm.slice(3)}0`);
-    } else {
-      range = IDBKeyRange.only([searchTerm.slice(0, 3), searchTerm.slice(3)]);
-      console.log(searchTerm.slice(3));
-    }
+  //   index = store.index("searchTerm");
+  // }
 
-    index = store.index("searchTerm");
-  }
+  // const data = await index.getAll(range);
 
-  const data = await index.getAll(range);
-
-  for (let cl of data) {
-    const title = cl.subject + cl.cid;
-    if (title.toUpperCase().indexOf(searchTerm) !== -1) {
-      results.push(cl);
-    }
-  }
-  return results;
+  // for (let cl of data) {
+  //   const title = cl.subject + cl.cid;
+  //   if (title.toUpperCase().indexOf(searchTerm) !== -1) {
+  //     results.push(cl);
+  //   }
+  // }
+  // return results;
 };
 
 /**
@@ -256,20 +256,19 @@ const initApp = async () => {
       localStorage.setItem("curTerm", JSON.stringify(cur));
       createDB(cur.termId).then((db) => {
         dispatch(setTerm(cur));
-        downloadTerm(cur.termId).then((res) => {
-          dispatch(setHasData(true));
-          cur.hasData = true;
-          dispatch(setTerm(cur));
-          localStorage.setItem("curTerm", JSON.stringify(cur));
-        });
-      });
-    } else if (!curTerm.hasData) {
-      downloadTerm(curTerm.termId).then((res) => {
+        // downloadTerm(cur.termId).then((res) => {
+        //   cur.hasData = true;
+        // });
         dispatch(setHasData(true));
-        curTerm.hasData = true;
-        dispatch(setTerm(curTerm));
-        localStorage.setItem("curTerm", JSON.stringify(curTerm));
       });
+    } else if (!JSON.parse(curTerm).hasData) {
+      const cur = JSON.parse(curTerm);
+      dispatch(setHasData(true));
+      cur.hasData = true;
+      dispatch(setTerm(cur));
+      localStorage.setItem("curTerm", JSON.stringify(cur));
+      // downloadTerm(curTerm.termId).then((res) => {
+      // });
     } else {
       dispatch(setHasData(true));
     }
@@ -316,7 +315,29 @@ const scheduleGenerator = async (term, classes) => {
   const schedules = [];
 };
 
+function getWidth() {
+  const { innerWidth: width } = window;
+  return width;
+}
+
+function useWidth() {
+  const [width, setWidth] = useState(getWidth());
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(getWidth());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return width;
+}
+
 export {
+  getWidth,
+  useWidth,
   searchData,
   createDB,
   fillDB,

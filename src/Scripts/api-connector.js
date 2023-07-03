@@ -5,7 +5,7 @@ import { setHasData } from "../Redux/slice";
 const url = "https://ws.apps.miamioh.edu/api/"; // API Website
 const termAPI = "academicTerm/v2?numOfFutureTerms=2&numOfPastTerms=2"; // API to get Terms
 const curCourses =
-  "courseSection/v3/courseSection?campusCode=O&limit=200&termCode="; // API to get Courses
+  "courseSection/v3/courseSection?campusCode=O&termCode="; // API to get Courses
 
 const getTerms = async () => {
   // Get Current Term
@@ -25,7 +25,7 @@ const getDeptData = async (term, dept) => {
       url +
       curCourses +
       term +
-      (runIndex == 0 ? "" : "&offset=" + runIndex * 200) +
+      (runIndex == 0 ? "" : "&offset=" + runIndex * 50) +
       "&compose=%2Cschedules%2Cinstructors%2Cattributes%2CcrossListedCourseSections%2CenrollmentDistribution" +
       "&course_subjectCode=" +
       dept
@@ -41,7 +41,7 @@ const getDeptData = async (term, dept) => {
     }
 
     // If the number of courses is less than 200, we have reached the end of the list
-    if (courseJson.data.length < 200) {
+    if (courseJson.data.length < 50) {
       break;
     }
   }

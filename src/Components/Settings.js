@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Trash } from "react-bootstrap-icons";
+import { Check, Trash, Download } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { changeDialogState, clearClasses, setTerm } from "../Redux/slice";
 import { getTermData } from "../Scripts/api-connector";
@@ -70,6 +70,9 @@ const Settings = () => {
       </Select>
       <Button sx={{ my: 1 }} color="primary" startDecorator={<Check />} onClick={applyChanges}>
         Apply
+      </Button>
+      <Button sx={{ my: 1 }} color="neutral" startDecorator={<Download />} onClick={applyChanges}>
+        Save Offline Data
       </Button>
       <Button
         sx={{ my: 1 }}

@@ -9,26 +9,7 @@ import Menu from "./Menu";
 import { useEffect, useState } from "react";
 import { CircularProgress, Stack } from "@mui/joy";
 import SearchBar from "./SearchBar";
-
-function getWidth() {
-  const { innerWidth: width } = window;
-  return width;
-}
-
-function useWidth() {
-  const [width, setWidth] = useState(getWidth());
-
-  useEffect(() => {
-    function handleResize() {
-      setWidth(getWidth());
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return width;
-}
+import { useWidth } from "../Scripts/script";
 
 const Header = () => {
   const width = useWidth();
