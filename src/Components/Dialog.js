@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { changeDialogState } from "../Redux/slice";
+import { changeDialogContent, changeDialogState } from "../Redux/slice";
 import SearchBox from "./SearchBox";
 import Menu from "./Menu";
 import Modal from "@mui/joy/Modal";
@@ -11,9 +11,11 @@ import Export from "./Export";
 import CRN from "./CRN";
 import DataLoading from "./DataLoading";
 import Settings from "./Settings";
-import Sheet from "@mui/joy/Sheet";
+import Card from "@mui/joy/Card";
 import { useState, useEffect } from "react";
 import { useWidth } from "../Scripts/script";
+import { IconButton, Stack } from "@mui/joy";
+import { X } from "react-bootstrap-icons";
 
 const Dialog = () => {
   const expanded = useSelector((state) => state.slice.showDialog);
@@ -60,9 +62,20 @@ const Dialog = () => {
           </Box>
           {dialogContent}
         </ModalDialog>
-      </Modal> : dialogContent == "" ? "" : <Sheet sx={{ width: "400px", position: "aboslute", top: "100px", left: "20px", maxHeight: "600px", overflowY: "scroll" }}>
+      </Modal> : dialogContent == "" ? "" : <Card sx={{ width: "400px", position: "aboslute", top: "100px", left: "20px", maxHeight: "600px" }}>
+        <Stack direction={"row"} justifyContent={"space-between"}>
+          <Typography sx={{ userSelect: "none" }} level="h3">
+            {dialogContentTxt}
+          </Typography>
+          <IconButton variant="plain" onClick={() => {
+            dispatch(changeDialogState(false));
+            dispatch(changeDialogContent(""));
+          }}>
+            <X />
+          </IconButton>
+        </Stack>
         {dialogContent}
-      </Sheet>
+      </Card>
   );
 };
 
