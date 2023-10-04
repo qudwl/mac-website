@@ -3,6 +3,7 @@ import {
   removeClassFromSchedule,
   changeSearchTerm,
 } from "../Redux/slice";
+import subjects from "../subjects.json";
 import Input from "@mui/joy/Input";
 import Stack from "@mui/joy/Stack";
 import SearchResult from "./SearchResult";
@@ -10,6 +11,7 @@ import { searchData, useWidth } from "../Scripts/script";
 import { useEffect, useState } from "react";
 import CircularProgress from "@mui/joy/CircularProgress";
 import Box from "@mui/joy/Box";
+import { Autocomplete } from "@mui/joy";
 
 const SearchBox = (props) => {
   const [results, setResults] = useState([]);
@@ -41,14 +43,14 @@ const SearchBox = (props) => {
   const display = useWidth() >= 1480 ? "none" : "block";
   return (
     <>
-      <Input
+      {/* <Input
         value={searchTerm}
         tabIndex={props.expanded ? 0 : -1}
         onChange={(e) => dispatch(changeSearchTerm(e.target.value))}
         placeholder="Search for a class"
         sx={{ mt: 1, maxWidth: "80vw", display: { display } }}
-      />
-
+      /> */}
+      <Autocomplete placeholder="Search for a class" value={searchTerm} options={subjects} onChange={(e) => dispatch(changeSearchTerm(e.target.value))} />
       <Stack direction={"column"} sx={{ overflowY: "scroll" }}>
         {isSearching ? (
           <Box
