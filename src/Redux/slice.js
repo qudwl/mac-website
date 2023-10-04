@@ -17,9 +17,9 @@ export const slice = createSlice({
       const cl = action.payload;
       for (let tcl in state.curClasses) {
         if (
-          cl.subject == state.curClasses[tcl].subject &&
-          cl.section == state.curClasses[tcl].section &&
-          cl.cid == state.curClasses[tcl].cid
+          cl.subject === state.curClasses[tcl].subject &&
+          cl.section === state.curClasses[tcl].section &&
+          cl.cid === state.curClasses[tcl].cid
         ) {
           return;
         } else {
@@ -47,9 +47,9 @@ export const slice = createSlice({
       const cl = action.payload;
       for (let tcl in state.curClasses) {
         if (
-          cl.subject == state.curClasses[tcl].subject &&
-          cl.section == state.curClasses[tcl].section &&
-          cl.cid == state.curClasses[tcl].cid
+          cl.subject === state.curClasses[tcl].subject &&
+          cl.section === state.curClasses[tcl].section &&
+          cl.cid === state.curClasses[tcl].cid
         ) {
           state.curClasses.splice(tcl, 1);
           localStorage.setItem("curClasses", JSON.stringify(state.curClasses));
@@ -70,7 +70,7 @@ export const slice = createSlice({
       state.dark = !state.dark;
     },
     changeSearchTerm: (state, action) => {
-      state.searchTerm = action.payload.toUpperCase();
+      state.searchTerm = action.payload;
     },
     setTerm: (state, action) => {
       state.curTerm = action.payload;

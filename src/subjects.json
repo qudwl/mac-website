@@ -1,0 +1,474 @@
+[
+    {
+        "label": "AA - Academic Affairs",
+        "id": "AA"
+    },
+    {
+        "label": "AAA - Asian/Asian American Studies",
+        "id": "AAA"
+    },
+    {
+        "label": "ACC - Accountancy",
+        "id": "ACC"
+    },
+    {
+        "label": "ACE - American Culture & English Prg",
+        "id": "ACE"
+    },
+    {
+        "label": "AER - Aeronautics",
+        "id": "AER"
+    },
+    {
+        "label": "AES - Aerospace Studies",
+        "id": "AES"
+    },
+    {
+        "label": "AMS - American Studies",
+        "id": "AMS"
+    },
+    {
+        "label": "APC - Applied Communication",
+        "id": "APC"
+    },
+    {
+        "label": "ARB - Arabic",
+        "id": "ARB"
+    },
+    {
+        "label": "ARC - Architecture & Interior Design",
+        "id": "ARC"
+    },
+    {
+        "label": "ART - Art",
+        "id": "ART"
+    },
+    {
+        "label": "ASO - Applied Social Science",
+        "id": "ASO"
+    },
+    {
+        "label": "ATH - Anthropology",
+        "id": "ATH"
+    },
+    {
+        "label": "BIO - Biology",
+        "id": "BIO"
+    },
+    {
+        "label": "BIS - Integrative Studies",
+        "id": "BIS"
+    },
+    {
+        "label": "BLS - Business Legal Studies",
+        "id": "BLS"
+    },
+    {
+        "label": "BSC - Biological Sciences",
+        "id": "BSC"
+    },
+    {
+        "label": "BUS - Business Analysis",
+        "id": "BUS"
+    },
+    {
+        "label": "BWS - Black World Studies",
+        "id": "BWS"
+    },
+    {
+        "label": "CAS - College of Arts and Science",
+        "id": "CAS"
+    },
+    {
+        "label": "CCA - College of Creative Arts",
+        "id": "CCA"
+    },
+    {
+        "label": "CEC - Col of Engineering & Computing",
+        "id": "CEC"
+    },
+    {
+        "label": "CHI - Chinese",
+        "id": "CHI"
+    },
+    {
+        "label": "CHM - Chemistry & Biochemistry",
+        "id": "CHM"
+    },
+    {
+        "label": "CIT - Comp & Information Technology",
+        "id": "CIT"
+    },
+    {
+        "label": "CJS - Criminal Justice Studies",
+        "id": "CJS"
+    },
+    {
+        "label": "CLA - Col Liberal Arts & Applied Sci",
+        "id": "CLA"
+    },
+    {
+        "label": "CLS - Classics",
+        "id": "CLS"
+    },
+    {
+        "label": "CMA - Community Arts",
+        "id": "CMA"
+    },
+    {
+        "label": "CMR - Commerce",
+        "id": "CMR"
+    },
+    {
+        "label": "CMS - Comparative Media Studies",
+        "id": "CMS"
+    },
+    {
+        "label": "CPB - Chem, Paper & Biomed Engineer",
+        "id": "CPB"
+    },
+    {
+        "label": "CRD - Civic and Regional Development",
+        "id": "CRD"
+    },
+    {
+        "label": "CRE - Critical Race & Ethnic Studies",
+        "id": "CRE"
+    },
+    {
+        "label": "CSE - Comp Sci &Software Engineering",
+        "id": "CSE"
+    },
+    {
+        "label": "CYB - Cybersecurity",
+        "id": "CYB"
+    },
+    {
+        "label": "DST - Disability Studies",
+        "id": "DST"
+    },
+    {
+        "label": "ECE - Electrical & Computer Engineer",
+        "id": "ECE"
+    },
+    {
+        "label": "ECO - Economics",
+        "id": "ECO"
+    },
+    {
+        "label": "EDL - Educational Leadership",
+        "id": "EDL"
+    },
+    {
+        "label": "EDP - Educational Psychology",
+        "id": "EDP"
+    },
+    {
+        "label": "EDT - Teaching,Curriculum&Ed Inquiry",
+        "id": "EDT"
+    },
+    {
+        "label": "EGM - Engineering Management",
+        "id": "EGM"
+    },
+    {
+        "label": "EGS - English Studies",
+        "id": "EGS"
+    },
+    {
+        "label": "EHS - Education, Health and Society",
+        "id": "EHS"
+    },
+    {
+        "label": "ENG - English",
+        "id": "ENG"
+    },
+    {
+        "label": "ENT - Engineering Technology",
+        "id": "ENT"
+    },
+    {
+        "label": "ENV - Environmental Science",
+        "id": "ENV"
+    },
+    {
+        "label": "ESP - Entrepreneurship",
+        "id": "ESP"
+    },
+    {
+        "label": "FAS - Fashion",
+        "id": "FAS"
+    },
+    {
+        "label": "FIN - Finance",
+        "id": "FIN"
+    },
+    {
+        "label": "FRE - French",
+        "id": "FRE"
+    },
+    {
+        "label": "FST - Film Studies",
+        "id": "FST"
+    },
+    {
+        "label": "FSW - Family Science and Social Work",
+        "id": "FSW"
+    },
+    {
+        "label": "GEO - Geography",
+        "id": "GEO"
+    },
+    {
+        "label": "GER - German",
+        "id": "GER"
+    },
+    {
+        "label": "GHS - Global Health Studies",
+        "id": "GHS"
+    },
+    {
+        "label": "GIC - Global & Intercultural Studies",
+        "id": "GIC"
+    },
+    {
+        "label": "GLG - Geology",
+        "id": "GLG"
+    },
+    {
+        "label": "GRK - Greek Language and Literature",
+        "id": "GRK"
+    },
+    {
+        "label": "GSC - Graduate School Community",
+        "id": "GSC"
+    },
+    {
+        "label": "GTY - Gerontology",
+        "id": "GTY"
+    },
+    {
+        "label": "HON - Honors",
+        "id": "HON"
+    },
+    {
+        "label": "HST - History",
+        "id": "HST"
+    },
+    {
+        "label": "HUM - Humanities Center",
+        "id": "HUM"
+    },
+    {
+        "label": "IDS - Interdisciplinary",
+        "id": "IDS"
+    },
+    {
+        "label": "IES - Environmental Sciences",
+        "id": "IES"
+    },
+    {
+        "label": "IMS - Emerging Tech: Business&Design",
+        "id": "IMS"
+    },
+    {
+        "label": "ISA - Information Systems& Analytics",
+        "id": "ISA"
+    },
+    {
+        "label": "ITL - Italian",
+        "id": "ITL"
+    },
+    {
+        "label": "ITS - International Studies",
+        "id": "ITS"
+    },
+    {
+        "label": "JPN - Japanese",
+        "id": "JPN"
+    },
+    {
+        "label": "JRN - Journalism",
+        "id": "JRN"
+    },
+    {
+        "label": "KNH - Kinesiology,Nutrition & Health",
+        "id": "KNH"
+    },
+    {
+        "label": "KOR - Korean",
+        "id": "KOR"
+    },
+    {
+        "label": "LAS - Latin American Studies",
+        "id": "LAS"
+    },
+    {
+        "label": "LAT - Latin Language & Literature",
+        "id": "LAT"
+    },
+    {
+        "label": "LIN - Linguistics",
+        "id": "LIN"
+    },
+    {
+        "label": "LR - Inst Learning in Retirement",
+        "id": "LR"
+    },
+    {
+        "label": "LST - Liberal Studies",
+        "id": "LST"
+    },
+    {
+        "label": "LUX - Luxembourg",
+        "id": "LUX"
+    },
+    {
+        "label": "MAC - Media and Communication",
+        "id": "MAC"
+    },
+    {
+        "label": "MBI - Microbiology",
+        "id": "MBI"
+    },
+    {
+        "label": "MGT - Management",
+        "id": "MGT"
+    },
+    {
+        "label": "MJF - Media, Journalism & Film",
+        "id": "MJF"
+    },
+    {
+        "label": "MKT - Marketing",
+        "id": "MKT"
+    },
+    {
+        "label": "MME - Mechan & Manufact Engineering",
+        "id": "MME"
+    },
+    {
+        "label": "MMS - Medical Science",
+        "id": "MMS"
+    },
+    {
+        "label": "MSC - Military Science",
+        "id": "MSC"
+    },
+    {
+        "label": "MTH - Mathematics",
+        "id": "MTH"
+    },
+    {
+        "label": "MUS - Music",
+        "id": "MUS"
+    },
+    {
+        "label": "NCS - Nonprofit & Community Studies",
+        "id": "NCS"
+    },
+    {
+        "label": "NSC - Naval Science",
+        "id": "NSC"
+    },
+    {
+        "label": "NSG - Nursing",
+        "id": "NSG"
+    },
+    {
+        "label": "ORG - Organizational Leadership",
+        "id": "ORG"
+    },
+    {
+        "label": "PAS - Physician Associate Studies",
+        "id": "PAS"
+    },
+    {
+        "label": "PHL - Philosophy",
+        "id": "PHL"
+    },
+    {
+        "label": "PHY - Physics",
+        "id": "PHY"
+    },
+    {
+        "label": "PLW - Pre-Law Studies",
+        "id": "PLW"
+    },
+    {
+        "label": "PMD - Premedical Studies",
+        "id": "PMD"
+    },
+    {
+        "label": "POL - Political Science",
+        "id": "POL"
+    },
+    {
+        "label": "POR - Portuguese",
+        "id": "POR"
+    },
+    {
+        "label": "PSS - Psychological Science",
+        "id": "PSS"
+    },
+    {
+        "label": "PSY - Psychology",
+        "id": "PSY"
+    },
+    {
+        "label": "REL - Religion, Comparative",
+        "id": "REL"
+    },
+    {
+        "label": "RUS - Russian",
+        "id": "RUS"
+    },
+    {
+        "label": "SJS - Social Justice Studies",
+        "id": "SJS"
+    },
+    {
+        "label": "SLM - Sport Leadership & Management",
+        "id": "SLM"
+    },
+    {
+        "label": "SOC - Sociology",
+        "id": "SOC"
+    },
+    {
+        "label": "SPA - Speech Pathology & Audiology",
+        "id": "SPA"
+    },
+    {
+        "label": "SPN - Spanish",
+        "id": "SPN"
+    },
+    {
+        "label": "STA - Statistics",
+        "id": "STA"
+    },
+    {
+        "label": "STC - Strategic Communication",
+        "id": "STC"
+    },
+    {
+        "label": "TCE - Teaching,Curriculum&Ed Inquiry",
+        "id": "TCE"
+    },
+    {
+        "label": "THE - Theatre",
+        "id": "THE"
+    },
+    {
+        "label": "UNV - University",
+        "id": "UNV"
+    },
+    {
+        "label": "WGS - Women,Gender&Sexuality Studies",
+        "id": "WGS"
+    },
+    {
+        "label": "WST - Western Program",
+        "id": "WST"
+    }
+]

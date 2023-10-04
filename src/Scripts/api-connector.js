@@ -16,33 +16,24 @@ const getTerms = async () => {
   return [...termJson.data];
 };
 
-const getDeptData = async (term, dept) => {
+const getDeptData = async (term, dept, offset = 0) => {
   const courses = [];
-  let runIndex = 0;
-  while (true) {
-    // Get the course data from the API
-    const courseData = await fetch(
-      url +
-      curCourses +
-      term +
-      (runIndex == 0 ? "" : "&offset=" + runIndex * 50) +
-      "&compose=%2Cschedules%2Cinstructors%2Cattributes%2CcrossListedCourseSections%2CenrollmentDistribution" +
-      "&course_subjectCode=" +
-      dept
-    );
-    runIndex++;
-    // Convert to JSON
-    const courseJson = await courseData.json();
-    for (let course of courseJson.data) {
-      let formatted = formatCourse(course);
-      if (Object.keys(formatted).length > 0) {
-        courses.push(formatted);
-      }
-    }
-
-    // If the number of courses is less than 200, we have reached the end of the list
-    if (courseJson.data.length < 50) {
-      break;
+  // Get the course data from the API
+  const courseData = await fetch(
+    url +
+    curCourses +
+    term +
+    (offset === 0 ? "" : "&offset=" + offset * 50) +
+    "&compose=%2Cschedules%2Cinstructors%2Cattributes%2CcrossListedCourseSections%2CenrollmentDistribution" +
+    "&course_subjectCode=" +
+    dept
+  );
+  // Convert to JSON
+  const courseJson = await courseData.json();
+  for (let course of courseJson.data) {
+    let formatted = formatCourse(course);
+    if (Object.keys(formatted).length > 0) {
+      courses.push(formatted);
     }
   }
   return courses;
